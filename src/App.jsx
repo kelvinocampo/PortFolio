@@ -8,12 +8,12 @@ export const App = () => {
   return (
     <>
       <Header/>
-      <MainContainer styles="flex-1 flex items-center justify-center p-4 mb-4">
+      <MainContainer styles="flex-1 flex items-center justify-center p-4 mb-4 ">
         <Routes>
           <Route path='/' element={<Home />}></Route>
         </Routes>
       </MainContainer>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }

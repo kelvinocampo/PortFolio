@@ -9,9 +9,9 @@ export const Footer = () => {
     };
 
     return (
-        <footer className="bg-gray-900 w-full text-white p-8 flex justify-center items-center">
-            <div className="container flex justify-center gap-4 items center flex-col w-full">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 max-w-full">
+        <footer className="bg-gray-900 text-white py-8 flex justify-center items-center w-full ">
+            <div className="container mx-auto px-4 w-full max-w-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 w-full max-w-full">
                     <div>
                         <h3 className="text-lg font-semibold mb-4 text-blue-400">Contacto</h3>
                         <p className="text-gray-300">{info.contact.email} </p>
@@ -19,7 +19,7 @@ export const Footer = () => {
                         <p className="text-gray-300">Ubicación: {info.country} </p>
                     </div>
 
-                    <div>
+                    <div className="overflow-x-hidden">
                         <h3 className="text-lg font-semibold mb-4 text-blue-400">Enlaces rápidos</h3>
                         <Navbar styles={{ ul: "space-y-2" }}>
                             <ItemNavBar url="/" styles="text-gray-300 hover:text-blue-400">Inicio</ItemNavBar>
@@ -27,6 +27,7 @@ export const Footer = () => {
                             <ItemNavBar url="/Experience" styles="text-gray-300 hover:text-blue-400">Experiencia</ItemNavBar>
                         </Navbar>
                     </div>
+
                     <div>
                         <h3 className="text-lg font-semibold mb-4 text-blue-400">Redes sociales</h3>
                         <div className="flex space-x-4">
@@ -40,7 +41,7 @@ export const Footer = () => {
                     </div>
                 </div>
 
-                <hr className="border-gray-700" />
+                <hr className="border-gray-700 mb-8" />
 
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <p className="mb-4 md:mb-0 text-gray-300">© 2023 Kevin Ocampo. Todos los derechos reservados.</p>
