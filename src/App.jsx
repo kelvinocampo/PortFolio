@@ -1,10 +1,14 @@
-import React from 'react'
-import { Header } from './Layouts/Header/Header.jsx'
+import { Routes, Route } from 'react-router'
+import { Header } from '@C/Layouts/Header/Header.jsx'
+import { Home } from '@C/Pages/Home/Home.jsx'
 
 export const App = () => {
   return (
     <>
-      <Header />
+      <Header></Header>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+      </Routes>
     </>
   )
 }
