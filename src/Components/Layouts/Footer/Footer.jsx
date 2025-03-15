@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub, FaArrowUp } from "react-icons/fa";
 import { FooterContainer } from "@C/Layouts/FooterContainer/FooterContainer.jsx"
-import { Navbar } from "@C/Layouts/Navbar/Navbar.jsx";
+import { Navbar } from "@C/Layouts/NavBar/NavBar.jsx";
 import { ItemNavBar } from '@C/UI/ItemNavBar/ItemNavBar.jsx';
 import info from "@D/AboutMe.json"
 
