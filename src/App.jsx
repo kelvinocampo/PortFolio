@@ -8,7 +8,7 @@ export const App = () => {
   return (
     <>
       <Header/>
-      <MainContainer styles="flex-1 flex items-center justify-center p-4 mb-4 ">
+      <MainContainer styles="flex-1 flex items-center justify-center px-4 py-12">
         <Routes>
           <Route path='/' element={<Home />}></Route>
         </Routes>
