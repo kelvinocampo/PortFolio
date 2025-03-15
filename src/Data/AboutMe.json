@@ -7,22 +7,33 @@
             "HTML",
             "CSS",
             "JavaScript",
+            "TypeScript",
             "React",
-            "Tailwind CSS"
+            "Tailwind CSS",
+            "Bootstrap"
         ],
         "backend": [
             "Node.js",
             "Express",
+            "Java",
             "MySQL",
+            "SQLite",
             "MongoDB"
         ],
         "tools": [
             "Git",
             "GitHub",
+            "NPM",
             "Docker",
-            "APIs REST"
-        ],
-        "methodologies": [
+            "APIs REST",
+            "Jest",
+            "Netlify",
+            "Vercel",
+            "Azure",
+            "Figma",
+            "Canva",
+            "Notion",
+            "Trello",
             "Desarrollo ágil",
             "Scrum"
         ],
@@ -32,7 +43,10 @@
             "Liderazgo",
             "Honestidad",
             "Respeto",
-            "Trabajo en equipo"
+            "Trabajo en equipo",
+            "Empatía",
+            "Asertividad",
+            "Colaboración"
         ]
     },
     "contact": {

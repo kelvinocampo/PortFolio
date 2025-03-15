@@ -10,45 +10,47 @@ export const Skills = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div
-                        className="relative bg-cover bg-center rounded-lg shadow-lg overflow-hidden group"
-                        style={{ backgroundImage: "url('/images/frontend-banner.jpg')" }}
+                        className="relative bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-lg overflow-hidden group transform transition-all duration-300 hover:scale-105"
                     >
-                        <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                        <div className="absolute inset-0 transition-all duration-300"></div>
                         <div className="relative p-6 text-white">
                             <h3 className="text-2xl font-semibold mb-4">Frontend</h3>
                             <ul className="list-disc list-inside">
                                 {info.skills.frontend.map((skill, index) => (
-                                    <li key={index}>{skill}</li>
+                                    <li key={index} className="mb-2">
+                                        {skill}
+                                    </li>
                                 ))}
                             </ul>
                         </div>
                     </div>
 
                     <div
-                        className="relative bg-cover bg-center rounded-lg shadow-lg overflow-hidden group"
-                        style={{ backgroundImage: "url('/images/backend-banner.jpg')" }}
+                        className="relative bg-gradient-to-r from-green-500 to-teal-600 rounded-lg shadow-lg overflow-hidden group transform transition-all duration-300 hover:scale-105"
                     >
-                        <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                        <div className="absolute inset-0 transition-all duration-300"></div>
                         <div className="relative p-6 text-white">
                             <h3 className="text-2xl font-semibold mb-4">Backend</h3>
                             <ul className="list-disc list-inside">
                                 {info.skills.backend.map((skill, index) => (
-                                    <li key={index}>{skill}</li>
+                                    <li key={index} className="mb-2">
+                                        {skill}
+                                    </li>
                                 ))}
                             </ul>
                         </div>
                     </div>
-
                     <div
-                        className="relative bg-cover bg-center rounded-lg shadow-lg overflow-hidden group"
-                        style={{ backgroundImage: "url('/images/tools-banner.jpg')" }}
+                        className="relative bg-gradient-to-r from-orange-500 to-red-600 rounded-lg shadow-lg overflow-hidden group transform transition-all duration-300 hover:scale-105"
                     >
-                        <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                        <div className="absolute inset-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
                         <div className="relative p-6 text-white">
                             <h3 className="text-2xl font-semibold mb-4">Herramientas</h3>
                             <ul className="list-disc list-inside">
                                 {info.skills.tools.map((skill, index) => (
-                                    <li key={index}>{skill}</li>
+                                    <li key={index} className="mb-2">
+                                        {skill}
+                                    </li>
                                 ))}
                             </ul>
                         </div>
