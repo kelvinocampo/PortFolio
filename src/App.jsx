@@ -4,6 +4,7 @@ import { Home } from '@C/Pages/Home/Home.jsx'
 import { MainContainer } from '@C/Layouts/MainContainer/MainContainer.jsx'
 import { Footer } from '@C/Layouts/Footer/Footer.jsx'
 import {Skills} from "@C/Pages/Skills/Skills.jsx"
+import {NoPage} from "@C/Pages/NoPage/NoPage.jsx"
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/Skills' element={<Skills />}></Route>
+          <Route path='*' element={<NoPage />}></Route>
         </Routes>
       </MainContainer>
       <Footer/>
