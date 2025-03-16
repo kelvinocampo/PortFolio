@@ -1,7 +1,4 @@
 {
-    "build": {
-        "dist": "dist"
-    },
     "routes": [
         {
             "src": "/.*",
