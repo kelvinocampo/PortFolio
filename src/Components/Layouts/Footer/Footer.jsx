@@ -44,7 +44,7 @@ export const Footer = () => {
                 <hr className="border-gray-700 mb-8" />
 
                 <div className="flex flex-col md:flex-row justify-between items-center">
-                    <p className="mb-4 md:mb-0 text-gray-300">© 2023 Kevin Ocampo. Todos los derechos reservados.</p>
+                    <p className="mb-4 md:mb-0 text-gray-300">© 2025 Kevin Ocampo. Todos los derechos reservados.</p>
                     <button
                         onClick={scrollToTop}
                         className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
