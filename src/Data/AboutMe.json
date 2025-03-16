@@ -49,9 +49,24 @@
             "Colaboración"
         ]
     },
+    "experience": {
+        "projects": [
+            {
+                "name": "Portafolio Personal",
+                "description": "Desarrollo de un portafolio web personal utilizando React y Tailwind CSS."
+            }
+        ],
+        "education": [
+            {
+                "title": "Tecnología en Análisis y Desarrollo de Software",
+                "institution": "SENA",
+                "duration": "2024 - 2025"
+            }
+        ]
+    },
     "contact": {
         "email": "kevinocampooso@gmail.com",
-        "github": "github.com/kelvinocampo",
+        "github": "kelvinocampo",
         "linkedin": "",
         "phoneNumber": "300 8948783"
     }
