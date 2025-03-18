@@ -54,6 +54,14 @@
             {
                 "name": "Portafolio Personal",
                 "description": "Desarrollo de un portafolio web personal utilizando React y Tailwind CSS."
+            },
+            {
+                "name": "Servidor de Tienda de Gatos",
+                "description": "Servidor para una tienda de gatos permitiendo la gestion de gatos, usuarios y adopciones."
+            },
+            {
+                "name": "Chat en Tiempo Real",
+                "description": "Chat de texto basico en tiempo real."
             }
         ],
         "education": [
@@ -61,6 +69,11 @@
                 "title": "Tecnología en Análisis y Desarrollo de Software",
                 "institution": "SENA",
                 "duration": "2024 - 2025"
+            },
+            {
+                "title": "Curso Basico RPA",
+                "institution": "PIX",
+                "duration": "2024"
             }
         ]
     },
