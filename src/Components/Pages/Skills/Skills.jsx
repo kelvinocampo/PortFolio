@@ -1,4 +1,5 @@
 import info from "@D/AboutMe.json";
+import { CardSkill } from '@C/Layouts/CardSkill/CardSkill.jsx'
 
 export const Skills = () => {
     return (
@@ -9,52 +10,29 @@ export const Skills = () => {
                 </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div
-                        className="relative bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-lg overflow-hidden group transform transition-all duration-300 hover:scale-105"
-                    >
-                        <div className="absolute inset-0 transition-all duration-300"></div>
-                        <div className="relative p-6 text-white">
-                            <h3 className="text-2xl font-semibold mb-4">Frontend</h3>
-                            <ul className="list-disc list-inside">
-                                {info.skills.frontend.map((skill, index) => (
-                                    <li key={index} className="mb-2">
-                                        {skill}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+                    <CardSkill title="Frontend" styles="from-blue-500 to-purple-600">
+                        {info.skills.frontend.map((skill, index) => (
+                            <li key={index} className="mb-2">
+                                {skill}
+                            </li>
+                        ))}
+                    </CardSkill>
 
-                    <div
-                        className="relative bg-gradient-to-r from-green-500 to-teal-600 rounded-lg shadow-lg overflow-hidden group transform transition-all duration-300 hover:scale-105"
-                    >
-                        <div className="absolute inset-0 transition-all duration-300"></div>
-                        <div className="relative p-6 text-white">
-                            <h3 className="text-2xl font-semibold mb-4">Backend</h3>
-                            <ul className="list-disc list-inside">
-                                {info.skills.backend.map((skill, index) => (
-                                    <li key={index} className="mb-2">
-                                        {skill}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        className="relative bg-gradient-to-r from-orange-500 to-red-600 rounded-lg shadow-lg overflow-hidden group transform transition-all duration-300 hover:scale-105"
-                    >
-                        <div className="absolute inset-0"></div>
-                        <div className="relative p-6 text-white">
-                            <h3 className="text-2xl font-semibold mb-4">Herramientas</h3>
-                            <ul className="list-disc list-inside">
-                                {info.skills.tools.map((skill, index) => (
-                                    <li key={index} className="mb-2">
-                                        {skill}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+                    <CardSkill title="Backend" styles="from-green-500 to-teal-600">
+                        {info.skills.backend.map((skill, index) => (
+                            <li key={index} className="mb-2">
+                                {skill}
+                            </li>
+                        ))}
+                    </CardSkill>
+
+                    <CardSkill title="Herramientas" styles="from-orange-500 to-red-600">
+                        {info.skills.tools.map((skill, index) => (
+                            <li key={index} className="mb-2">
+                                {skill}
+                            </li>
+                        ))}
+                    </CardSkill>
                 </div>
 
                 <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-6 ">
@@ -66,7 +44,7 @@ export const Skills = () => {
                                 className="flex items-center gap-2 bg-white p-3 rounded-lg"
                             >
                                 <span className="text-lg">🌟</span>
-                                <p className="text-lg bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text">{skill}</p>
+                                <p className="text-lg text-transparent bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text">{skill}</p>
                             </div>
                         ))}
                     </div>
