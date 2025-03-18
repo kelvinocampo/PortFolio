@@ -35,20 +35,17 @@ export const Skills = () => {
                     </CardSkill>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-6 ">
-                    <h3 className="text-2xl font-semibold mb-4 text-white">Habilidades Sociales</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        {info.skills.socialSkills.map((skill, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center gap-2 bg-white p-3 rounded-lg"
-                            >
-                                <span className="text-lg">🌟</span>
-                                <p className="text-lg text-transparent bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text">{skill}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <CardSkill title="Habilidades Sociales" applyHover={false} isGrid={true} styles="from-blue-500 to-purple-600">
+                    {info.skills.socialSkills.map((skill, index) => (
+                        <div
+                            key={index}
+                            className="flex items-center gap-2 bg-white p-3 rounded-lg"
+                        >
+                            <span className="text-lg">🌟</span>
+                            <p className="text-lg text-transparent bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text">{skill}</p>
+                        </div>
+                    ))}
+                </CardSkill>
 
                 <div className="bg-gradient-to-r from-green-500 to-teal-600 rounded-lg p-6 text-white">
                     <h3 className="text-2xl font-semibold mb-4">Nivel de Inglés</h3>
