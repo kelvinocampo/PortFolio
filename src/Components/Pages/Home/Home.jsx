@@ -1,11 +1,11 @@
 import info from "@D/AboutMe.json";
-import img from "@A/imgPlaceholder.png";
+import img from "@A/Foto.png";
 
 export const Home = () => {
   return (
     <section className="flex h-full w-full items-center justify-center bg-white p-4">
       <div className="max-w-[600px] min-w-[250px] w-full flex flex-col items-center gap-12 sm:flex-row sm:justify-between sm:items-center">
-        <div className="w-48 h-48 sm:w-50 sm:h-50 shadow-lg sm:rotate-[-5deg]">
+        <div className="w-48 sm:w-50 sm:h-50 shadow-lg">
           <img
             className="w-full h-full rounded-lg object-cover"
             src={img}
