@@ -5,16 +5,16 @@ import { useState } from "react";
 
 export const Header = () => {
   const [estateNavBar, setEstateNavBar] = useState("hidden");
-  const ItemStyles = "block py-0 sm:py-4 text-black hover:text-blue-700 font-medium";
+  const ItemStyles = "block py-0 sm:py-4 text-gray-300 hover:text-blue-400 font-medium";
 
   const handleEstateNavBar = () => {
     setEstateNavBar(estateNavBar === "hidden" ? "flex" : "hidden");
   };
 
   return (
-    <header className="bg-white w-full p-4 text-center flex items-center justify-between gap-8 flex-col sm:flex-row sm:justify-center">
+    <header className="bg-gray-900 w-full p-4 text-center flex items-center justify-between gap-8 flex-col sm:flex-row sm:justify-center">
       <div className="flex justify-between items-center w-full">
-        <h1 className="text-2xl font-semibold text-black leading-6">Kevin Ocampo</h1>
+        <h1 className="text-2xl font-semibold text-blue-400 leading-6">Kevin Ocampo</h1>
         <img
           aria-label="Toggle navigation menu"
           className="w-8 block py-4 sm:hidden cursor-pointer"
