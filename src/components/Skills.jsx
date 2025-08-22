@@ -21,7 +21,7 @@ const categoryColors = {
 
 const levelColors = {
   Básico: "border-yellow-500/50",
-  Intermedio: "border-orange-500/50", 
+  Intermedio: "border-orange-500/50",
   Avanzado: "border-green-500/50"
 };
 
@@ -62,7 +62,7 @@ export const Skills = () => {
             >
               {/* Efecto de brillo */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#64ffda]/0 via-[#64ffda]/5 to-[#64ffda]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
+
               {/* Contenido */}
               <div className="relative z-10">
                 {/* Categoría */}
@@ -74,12 +74,12 @@ export const Skills = () => {
                     {skill.category}
                   </span>
                 )}
-                
+
                 {/* Nombre de la skill */}
                 <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-[#64ffda] transition-colors">
                   {skill.name}
                 </h3>
-                
+
                 {/* Nivel */}
                 {skill.level && (
                   <div className="flex items-center justify-between">
@@ -91,7 +91,7 @@ export const Skills = () => {
                           className={`
                             w-2 h-2 rounded-full transition-colors
                             ${dot <= (skill.level === 'Básico' ? 1 : skill.level === 'Intermedio' ? 2 : 3)
-                              ? 'bg-[#64ffda]' 
+                              ? 'bg-[#64ffda]'
                               : 'bg-gray-600'
                             }
                           `}
@@ -101,7 +101,7 @@ export const Skills = () => {
                   </div>
                 )}
               </div>
-              
+
               {/* Indicador de hover */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#64ffda] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-xl"></div>
             </div>

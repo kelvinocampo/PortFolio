@@ -98,7 +98,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
   const isLeft = index % 2 === 0;
 
   return (
-    <div 
+    <div
       className={`
         relative flex ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} 
         items-center mb-8 md:mb-16 group
@@ -108,7 +108,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
     >
       {/* Timeline line connector */}
       <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#64FFDA]/50 to-transparent"></div>
-      
+
       {/* Timeline dot */}
       <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#64FFDA] rounded-full border-4 border-[#0A192F] z-10 group-hover:scale-125 transition-transform duration-300 shadow-lg shadow-[#64FFDA]/50"></div>
 
@@ -133,7 +133,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
               px-3 py-1 rounded-full text-xs font-medium
               ${experience.type === 'Tiempo Completo' ? 'bg-green-500/20 text-green-300' :
                 experience.type === 'Freelance' ? 'bg-blue-500/20 text-blue-300' :
-                'bg-purple-500/20 text-purple-300'}
+                  'bg-purple-500/20 text-purple-300'}
             `}>
               {experience.type}
             </span>
@@ -182,7 +182,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
                 ▼
               </span>
             </button>
-            
+
             <div className={`
               overflow-hidden transition-all duration-300 
               ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
@@ -208,8 +208,8 @@ export const Experience = () => {
   const [timelineRef, timelineIsVisible] = useIntersectionObserver();
 
   return (
-    <section 
-      id="experience" 
+    <section
+      id="experience"
       className="w-full bg-[#0A192F] text-gray-300 py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
@@ -243,7 +243,7 @@ export const Experience = () => {
         <div ref={timelineRef} className="relative">
           {/* Main timeline line (hidden on mobile) */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#64FFDA] via-[#64FFDA]/50 to-transparent"></div>
-          
+
           {experienceData.map((experience, index) => (
             <ExperienceCard
               key={experience.id}

@@ -29,7 +29,7 @@ export const Header = () => {
   const getButtonClasses = (variant, isMobile = false) => {
     const baseSize = isMobile ? "px-4 py-2 text-sm" : "px-4 py-2 sm:px-6 sm:py-3";
     const baseClasses = `${baseSize} rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#64FFDA]/50 w-full sm:w-auto text-center`;
-    
+
     switch (variant) {
       case 'primary':
         return `${baseClasses} bg-gradient-to-r from-[#64FFDA] to-[#00FFCA] text-[#0A192F] hover:shadow-lg hover:shadow-[#64FFDA]/25`;
@@ -51,9 +51,9 @@ export const Header = () => {
           {/* Círculos decorativos - Tamaños responsive */}
           <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-40 h-40 sm:w-72 sm:h-72 bg-[#64FFDA]/5 rounded-full blur-2xl sm:blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-48 h-48 sm:w-96 sm:h-96 bg-[#64FFDA]/3 rounded-full blur-2xl sm:blur-3xl animate-pulse delay-1000"></div>
-          
+
           {/* Grid pattern - Responsive */}
-          <div 
+          <div
             className="absolute inset-0 opacity-5 sm:opacity-10"
             style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, #64FFDA 1px, transparent 0)`,
@@ -132,8 +132,8 @@ export const Header = () => {
       {/* Navbar fijo - Completamente responsive */}
       <nav className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${isScrolled 
-          ? 'bg-[#0A192F]/95 backdrop-blur-lg shadow-lg border-b border-[#64FFDA]/20' 
+        ${isScrolled
+          ? 'bg-[#0A192F]/95 backdrop-blur-lg shadow-lg border-b border-[#64FFDA]/20'
           : 'bg-transparent'
         }
       `}>
@@ -142,7 +142,7 @@ export const Header = () => {
           <div className="text-[#64FFDA] font-bold text-lg sm:text-xl font-mono">
             {'<KO />'}
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
             {navigationItems.map((item) => (
