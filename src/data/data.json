@@ -1,0 +1,264 @@
+{
+    "experience": [
+        {
+            "id": 1,
+            "company": "Hackathon Odoo-Clion SENA",
+            "position": "Desarrollador de Vistas y Modelos",
+            "period": "Abril 2025 - 24 horas",
+            "location": "Armenia, Quindío, Colombia",
+            "type": "Hackathon",
+            "description": "Desarrollo de módulos para la gestión de pacientes, insumos, fichas clínicas y facturación.",
+            "achievements": [
+                "Reestructuración del sitio web de la clínica incluido en el reto, mejorando la navegación y la experiencia de usuario."
+            ],
+            "technologies": [
+                "Odoo",
+                "Python",
+                "PostgreSQL",
+                "XML"
+            ],
+            "logo": "🧩"
+        },
+        {
+            "id": 2,
+            "company": "IBG (Iván Botero Gómez)",
+            "position": "Aprendiz",
+            "period": "Julio 2025 - Presente",
+            "location": "Armenia, Quindío, Colombia",
+            "type": "Tiempo Completo",
+            "description": "Desarrollo y migración de funcionalidades en diferentes aplicaciones internas de la empresa.",
+            "achievements": [
+                "Migración de más de 10 aplicaciones a nuevas versiones de motor de base de datos y PHP.",
+                "Desarrollo de aplicativo para la gestión de inmuebles contando con más de 5 módulos funcionales."
+            ],
+            "technologies": [
+                "PHP",
+                "JavaScript",
+                "jQuery",
+                "HTML",
+                "Bootstrap",
+                "CSS",
+                "SQL Server",
+                "Informix"
+            ],
+            "logo": "🏢"
+        }
+    ],
+    "skills": [
+        {
+            "name": "JavaScript",
+            "level": "Avanzado",
+            "category": "Frontend"
+        },
+        {
+            "name": "TypeScript",
+            "level": "Intermedio",
+            "category": "Frontend"
+        },
+        {
+            "name": "Node.js",
+            "level": "Intermedio",
+            "category": "Backend"
+        },
+        {
+            "name": "Java",
+            "level": "Basico",
+            "category": "Backend"
+        },
+        {
+            "name": "C#",
+            "level": "Basico",
+            "category": "Backend"
+        },
+        {
+            "name": "PHP",
+            "level": "Intermedio",
+            "category": "Backend"
+        },
+        {
+            "name": "Python",
+            "level": "Intermedio",
+            "category": "Backend"
+        },
+        {
+            "name": "React",
+            "level": "Intermedio",
+            "category": "Frontend"
+        },
+        {
+            "name": "Express.js",
+            "level": "Intermedio",
+            "category": "Backend"
+        },
+        {
+            "name": "Flutter",
+            "level": "Basico",
+            "category": "Frontend"
+        },
+        {
+            "name": "TailwindCSS",
+            "level": "Intermedio",
+            "category": "Styling"
+        },
+        {
+            "name": "Bootstrap",
+            "level": "Intermedio",
+            "category": "Styling"
+        },
+        {
+            "name": "Odoo",
+            "level": "Basico",
+            "category": "Backend"
+        },
+        {
+            "name": "MySQL",
+            "level": "Basico",
+            "category": "Database"
+        },
+        {
+            "name": "SQLite",
+            "level": "Basico",
+            "category": "Database"
+        },
+        {
+            "name": "MongoDB",
+            "level": "Basico",
+            "category": "Database"
+        },
+        {
+            "name": "SQL Server",
+            "level": "Intermedio",
+            "category": "Database"
+        },
+        {
+            "name": "Informix",
+            "level": "Intermedio",
+            "category": "Database"
+        },
+        {
+            "name": "Jest",
+            "level": "Basico",
+            "category": "Testing"
+        },
+        {
+            "name": "npm",
+            "level": "Intermedio",
+            "category": "Tools"
+        },
+        {
+            "name": "VS Code",
+            "level": "Avanzado",
+            "category": "Tools"
+        },
+        {
+            "name": "Visual Studio",
+            "level": "Basico",
+            "category": "Tools"
+        },
+        {
+            "name": "Figma",
+            "level": "Intermedio",
+            "category": "Design"
+        },
+        {
+            "name": "Canva",
+            "level": "Intermedio",
+            "category": "Design"
+        },
+        {
+            "name": "Netlify",
+            "level": "Intermedio",
+            "category": "Deployment"
+        },
+        {
+            "name": "Render",
+            "level": "Basico",
+            "category": "Deployment"
+        },
+        {
+            "name": "GitHub",
+            "level": "Basico",
+            "category": "Version Control"
+        },
+        {
+            "name": "Vercel",
+            "level": "Intermedio",
+            "category": "Deployment"
+        },
+        {
+            "name": "Azure",
+            "level": "Basico",
+            "category": "Deployment"
+        },
+        {
+            "name": "Railway",
+            "level": "Intermedio",
+            "category": "Deployment"
+        },
+        {
+            "name": "Notion",
+            "level": "Intermedio",
+            "category": "Project Management"
+        },
+        {
+            "name": "Trello",
+            "level": "Intermedio",
+            "category": "Project Management"
+        }
+    ],
+    "projects": [
+        {
+            "id": 1,
+            "title": "Senagrol",
+            "category": "fullstack",
+            "description": "SENAGROL conecta agricultores con consumidores, optimizando la rentabilidad y mejorando la comercialización de sus cultivos.",
+            "longDescription": "Plataforma creada para facilitar que los agricultores lleguen directamente a los consumidores finales, asegurando la rentabilidad de sus cultivos. La aplicación aborda problemas críticos del sector, como el acceso limitado a mercados, la falta de visibilidad de los productos y la descoordinación entre producción y demanda, ofreciendo soluciones tecnológicas eficientes para mejorar la comercialización agrícola.",
+            "image": "../assets/images/senagrol.wepb",
+            "technologies": [
+                "React",
+                "Tailwind CSS",
+                "Node.js",
+                "Stripe",
+                "MySQL",
+                "Express"
+            ],
+            "features": [
+                "Chat en tiempo real",
+                "Panel de administración completo",
+                "Seguimiento del transporte de productos",
+                "Gestión de transporte mediante los mismos usuarios"
+            ],
+            "githubUrl": "https://github.com/kelvinocampo/SENAGROL_Client",
+            "liveUrl": "https://senagrol.vercel.app/",
+            "status": "Completado",
+            "year": "2025",
+            "client": "SENA",
+            "duration": "4 meses"
+        },
+        {
+            "id": 2,
+            "title": "Tesoros India",
+            "category": "backend",
+            "description": "En construccion",
+            "longDescription": "En contruccion.",
+            "image": "https://tesoros-india.vercel.app/images/FondoDesktop.webp",
+            "technologies": [
+                "React",
+                "Tailwind CSS",
+                "Node.js",
+                "Mercado Pago",
+                "MySQL",
+                "Express"
+            ],
+            "features": [
+                "En construccion"
+            ],
+            "githubUrl": "https://github.com/davidar27/FrontedTesorosIndia",
+            "liveUrl": "https://tesoros-india.vercel.app/",
+            "status": "Completado",
+            "year": "2025",
+            "client": "SENA",
+            "duration": "4 meses"
+        }
+    ]
+}

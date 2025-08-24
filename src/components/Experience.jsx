@@ -1,71 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
+import data from '@/data/data.json';
 
-const experienceData = [
-  {
-    id: 1,
-    company: "Tech Solutions Inc.",
-    position: "Senior Full Stack Developer",
-    period: "2023 - Presente",
-    location: "Remoto",
-    type: "Tiempo Completo",
-    description: "Lideré el desarrollo de aplicaciones web escalables utilizando React y Node.js, mejorando la experiencia del usuario y optimizando el rendimiento del sistema.",
-    achievements: [
-      "Desarrollé una plataforma de e-commerce que incrementó las ventas en un 45%",
-      "Implementé arquitectura de microservicios reduciendo tiempos de carga en 60%",
-      "Mentoré a 5 desarrolladores junior en mejores prácticas de código"
-    ],
-    technologies: ["React", "Node.js", "TypeScript", "MongoDB", "AWS"],
-    logo: "🚀"
-  },
-  {
-    id: 2,
-    company: "StartupXYZ",
-    position: "Frontend Developer",
-    period: "2021 - 2023",
-    location: "Medellín, Colombia",
-    type: "Tiempo Completo",
-    description: "Desarrollé interfaces de usuario modernas y responsivas para aplicaciones web, colaborando estrechamente con diseñadores y el equipo de backend.",
-    achievements: [
-      "Creé un sistema de componentes reutilizables usado en 10+ proyectos",
-      "Mejoré la accesibilidad web alcanzando un score de 95% en Lighthouse",
-      "Reduje el bundle size de la aplicación principal en un 40%"
-    ],
-    technologies: ["React", "Vue.js", "Sass", "Webpack", "Jest"],
-    logo: "💡"
-  },
-  {
-    id: 3,
-    company: "Freelance",
-    position: "Desarrollador Web",
-    period: "2020 - 2021",
-    location: "Remoto",
-    type: "Freelance",
-    description: "Trabajé con múltiples clientes desarrollando sitios web y aplicaciones personalizadas, desde landing pages hasta sistemas de gestión complejos.",
-    achievements: [
-      "Completé 25+ proyectos web con una calificación promedio de 4.9/5",
-      "Desarrollé 3 sistemas de gestión para pequeñas empresas",
-      "Implementé soluciones SEO que mejoraron el ranking en un 200%"
-    ],
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-    logo: "🎯"
-  },
-  {
-    id: 4,
-    company: "Universidad Nacional",
-    position: "Estudiante de Ingeniería",
-    period: "2017 - 2021",
-    location: "Bogotá, Colombia",
-    type: "Educación",
-    description: "Ingeniería de Sistemas con enfoque en desarrollo de software y arquitecturas web modernas.",
-    achievements: [
-      "Proyecto de grado: Sistema de gestión académica con React y Node.js",
-      "Participé en 3 hackathons universitarios, ganando 1er lugar en 2",
-      "Promedio académico: 4.2/5.0"
-    ],
-    technologies: ["Java", "Python", "C++", "SQL", "Git"],
-    logo: "🎓"
-  }
-];
+const experienceData = data.experience;
 
 const useIntersectionObserver = (options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);

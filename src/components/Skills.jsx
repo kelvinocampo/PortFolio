@@ -1,22 +1,20 @@
 // Skills.jsx
 import { useState } from 'react';
+import data from '@/data/data.json';
 
-const skillsData = [
-  { name: "HTML", level: "Avanzado", category: "Frontend" },
-  { name: "CSS", level: "Avanzado", category: "Styling" },
-  { name: "JavaScript", level: "Avanzado", category: "Frontend" },
-  { name: "TypeScript", level: "Intermedio", category: "Frontend" },
-  { name: "React", level: "Avanzado", category: "Frontend" },
-  { name: "Node.js", level: "Intermedio", category: "Backend" },
-  { name: "TailwindCSS", level: "Avanzado", category: "Styling" },
-  { name: "MongoDB", level: "Intermedio", category: "Database" },
-];
+const skillsData = data.skills;
 
 const categoryColors = {
   Frontend: "bg-blue-500/20 text-blue-300",
   Backend: "bg-green-500/20 text-green-300",
   Database: "bg-purple-500/20 text-purple-300",
-  Styling: "bg-pink-500/20 text-pink-300"
+  Styling: "bg-pink-500/20 text-pink-300",
+  Testing: "bg-red-500/20 text-red-300",
+  Tools: "bg-yellow-500/20 text-yellow-300",
+  Design: "bg-orange-500/20 text-orange-300",
+  Deployment: "bg-teal-500/20 text-teal-300",
+  "Version Control": "bg-indigo-500/20 text-indigo-300",
+  "Project Management": "bg-gray-500/20 text-gray-300"
 };
 
 const levelColors = {
