@@ -3,6 +3,24 @@ import data from '@/data/data.json';
 
 const experienceData = data.experience;
 
+function countTechnologies(experience) {
+  const techCount = {};
+
+  experience.forEach((job) => {
+    job.technologies.forEach((tech) => {
+      if (techCount[tech]) {
+        techCount[tech] += 1;
+      } else {
+        techCount[tech] = 1;
+      }
+    });
+  });
+
+  return techCount;
+}
+
+const usedTechnologies = countTechnologies(data.experience);
+
 const useIntersectionObserver = (options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef();
@@ -196,19 +214,19 @@ export const Experience = () => {
           ${timelineIsVisible ? 'animate-slide-up delay-1000' : 'opacity-0'}
         `}>
           <div className="text-center p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30">
-            <h3 className="text-3xl font-bold text-[#64FFDA] mb-2">4+</h3>
+            <h3 className="text-3xl font-bold text-[#64FFDA] mb-2">{data.info.years_worked}</h3>
             <p className="text-gray-300">Años de experiencia</p>
           </div>
           <div className="text-center p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30">
-            <h3 className="text-3xl font-bold text-[#64FFDA] mb-2">50+</h3>
+            <h3 className="text-3xl font-bold text-[#64FFDA] mb-2">{data.info.proyects_completed}</h3>
             <p className="text-gray-300">Proyectos completados</p>
           </div>
           <div className="text-center p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30">
-            <h3 className="text-3xl font-bold text-[#64FFDA] mb-2">3</h3>
+            <h3 className="text-3xl font-bold text-[#64FFDA] mb-2">{data.info.companies}</h3>
             <p className="text-gray-300">Empresas</p>
           </div>
           <div className="text-center p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30">
-            <h3 className="text-3xl font-bold text-[#64FFDA] mb-2">15+</h3>
+            <h3 className="text-3xl font-bold text-[#64FFDA] mb-2">{usedTechnologies}</h3>
             <p className="text-gray-300">Tecnologías</p>
           </div>
         </div>

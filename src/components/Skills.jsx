@@ -109,7 +109,7 @@ export const Skills = () => {
         {/* Estadísticas adicionales */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30">
-            <h3 className="text-2xl font-bold text-[#64ffda] mb-2">8+</h3>
+            <h3 className="text-2xl font-bold text-[#64ffda] mb-2">{skillsData.length}</h3>
             <p className="text-gray-300">Tecnologías dominadas</p>
           </div>
           <div className="p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30">

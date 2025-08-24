@@ -1,4 +1,9 @@
 {
+    "info":{
+        "years_worked": "-1",
+        "proyects_completed": "+10",
+        "companies": "1"
+    },
     "experience": [
         {
             "id": 1,
@@ -213,7 +218,7 @@
             "category": "fullstack",
             "description": "SENAGROL conecta agricultores con consumidores, optimizando la rentabilidad y mejorando la comercialización de sus cultivos.",
             "longDescription": "Plataforma creada para facilitar que los agricultores lleguen directamente a los consumidores finales, asegurando la rentabilidad de sus cultivos. La aplicación aborda problemas críticos del sector, como el acceso limitado a mercados, la falta de visibilidad de los productos y la descoordinación entre producción y demanda, ofreciendo soluciones tecnológicas eficientes para mejorar la comercialización agrícola.",
-            "image": "../assets/images/senagrol.wepb",
+            "image": "assets/images/senagrol.webp",
             "technologies": [
                 "React",
                 "Tailwind CSS",

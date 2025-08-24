@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <>
       <Header />
-      <Experience />
+      {/* <Experience /> */}
       <Skills />
       <Projects />
     </>
