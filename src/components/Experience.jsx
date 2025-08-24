@@ -4,22 +4,19 @@ import data from '@/data/data.json';
 const experienceData = data.experience;
 
 function countTechnologies(experience) {
-  const techCount = {};
+  const techSet = new Set();
 
   experience.forEach((job) => {
     job.technologies.forEach((tech) => {
-      if (techCount[tech]) {
-        techCount[tech] += 1;
-      } else {
-        techCount[tech] = 1;
-      }
+      techSet.add(tech); // agrega solo si no estaba antes
     });
   });
 
-  return techCount;
+  return techSet.size; // número de tecnologías únicas
 }
 
 const usedTechnologies = countTechnologies(data.experience);
+
 
 const useIntersectionObserver = (options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
