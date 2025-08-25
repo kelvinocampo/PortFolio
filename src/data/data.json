@@ -58,7 +58,7 @@
         {
             "name": "TypeScript",
             "level": "Intermedio",
-            "category": "Frontend"
+            "categories": ["Frontend", "Backend"]
         },
         {
             "name": "Node.js",
