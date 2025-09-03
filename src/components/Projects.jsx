@@ -19,7 +19,7 @@ const useIntersectionObserver = (options = {}) => {
             ([entry]) => {
                 setIsIntersecting(entry.isIntersecting);
             },
-            { threshold: 0.1, ...options }
+            { threshold: 0.0, ...options }
         );
 
         if (ref.current) {
