@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import data from '@/data/data.json';
 
 const useIntersectionObserver = (options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -26,48 +27,7 @@ const useIntersectionObserver = (options = {}) => {
   return [ref, isIntersecting];
 };
 
-const contactMethods = [
-  {
-    id: 1,
-    name: 'Email',
-    value: 'kevin.ocampo@example.com',
-    href: 'mailto:kevin.ocampo@example.com',
-    icon: '📧',
-    description: 'Envíame un correo',
-    color: 'from-red-500 to-orange-500',
-    bgHover: 'hover:bg-red-500/10'
-  },
-  {
-    id: 2,
-    name: 'LinkedIn',
-    value: '/in/kevin-ocampo',
-    href: 'https://linkedin.com/in/kevin-ocampo',
-    icon: '💼',
-    description: 'Conectemos',
-    color: 'from-blue-500 to-cyan-500',
-    bgHover: 'hover:bg-blue-500/10'
-  },
-  {
-    id: 3,
-    name: 'GitHub',
-    value: '@kevin-ocampo',
-    href: 'https://github.com/kevin-ocampo',
-    icon: '🔗',
-    description: 'Mi código',
-    color: 'from-purple-500 to-pink-500',
-    bgHover: 'hover:bg-purple-500/10'
-  },
-  {
-    id: 4,
-    name: 'WhatsApp',
-    value: '+57 300 123 4567',
-    href: 'https://wa.me/573001234567',
-    icon: '📱',
-    description: 'Chat directo',
-    color: 'from-green-500 to-emerald-500',
-    bgHover: 'hover:bg-green-500/10'
-  }
-];
+const contactMethods = data.contact;
 
 const ContactCard = ({ method, index, isVisible }) => {
   const [isHovered, setIsHovered] = useState(false);

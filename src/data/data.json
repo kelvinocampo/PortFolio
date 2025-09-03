@@ -1,5 +1,5 @@
 {
-    "info":{
+    "info": {
         "years_worked": "-1",
         "proyects_completed": "+10",
         "companies": "1"
@@ -58,7 +58,10 @@
         {
             "name": "TypeScript",
             "level": "Intermedio",
-            "categories": ["Frontend", "Backend"]
+            "categories": [
+                "Frontend",
+                "Backend"
+            ]
         },
         {
             "name": "Node.js",
@@ -264,6 +267,48 @@
             "year": "2025",
             "client": "SENA",
             "duration": "4 meses"
+        }
+    ],
+    "contact": [
+        {
+            "id": 1,
+            "name": "Email",
+            "value": "kevinocampooso@gmail.com",
+            "href": "mailto:kevinocampooso@gmail.com",
+            "icon": "📧",
+            "description": "Envíame un correo",
+            "color": "from-red-500 to-orange-500",
+            "bgHover": "hover:bg-red-500/10"
+        },
+        {
+            "id": 2,
+            "name": "LinkedIn",
+            "value": "/in/kevin-ocampo-osorio-4013202a4",
+            "href": "https://www.linkedin.com/in/kevin-ocampo-osorio-4013202a4/",
+            "icon": "💼",
+            "description": "Conectemos",
+            "color": "from-blue-500 to-cyan-500",
+            "bgHover": "hover:bg-blue-500/10"
+        },
+        {
+            "id": 3,
+            "name": "GitHub",
+            "value": "@kelvinocampo",
+            "href": "https://github.com/kelvinocampo",
+            "icon": "🔗",
+            "description": "Mi código",
+            "color": "from-purple-500 to-pink-500",
+            "bgHover": "hover:bg-purple-500/10"
+        },
+        {
+            "id": 4,
+            "name": "WhatsApp",
+            "value": "+57 300 894 8783",
+            "href": "https://wa.me/573008948783",
+            "icon": "📱",
+            "description": "Chat directo",
+            "color": "from-green-500 to-emerald-500",
+            "bgHover": "hover:bg-green-500/10"
         }
     ]
 }
