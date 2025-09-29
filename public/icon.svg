@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Fondo redondeado -->
+  <rect width="64" height="64" rx="12" fill="#0A192F"/>
+  
+  <!-- Gradiente -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64FFDA"/>
+      <stop offset="100%" stop-color="#00BFFF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Texto central -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="monospace" font-weight="bold" font-size="18"
+        fill="url(#grad)">
+    &lt;KO /&gt;
+  </text>
+</svg>
