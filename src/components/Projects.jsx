@@ -63,12 +63,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     <div className="absolute bottom-4 left-4">
                         <span className={`
               px-3 py-1 rounded-full text-xs font-medium
-              ${project.status === 'completed' ? 'bg-green-500/20 text-green-300 border border-green-500/30' :
-                                project.status === 'in-progress' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30' :
+              ${project.status === 'Completado' ? 'bg-green-500/20 text-green-300 border border-green-500/30' :
+                                project.status === 'En Progreso' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30' :
                                     'bg-blue-500/20 text-blue-300 border border-blue-500/30'}
             `}>
-                            {project.status === 'completed' ? 'Completado' :
-                                project.status === 'in-progress' ? 'En desarrollo' : 'Planeado'}
+                            {project.status}
                         </span>
                     </div>
                 </div>
@@ -175,12 +174,12 @@ const ProjectCard = ({ project, index, onClick }) => {
                     <div className="absolute top-4 left-4">
                         <span className={`
               px-2 py-1 rounded-full text-xs font-medium backdrop-blur-sm
-              ${project.status === 'completed' ? 'bg-green-500/20 text-green-300 border border-green-500/50' :
-                                project.status === 'in-progress' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/50' :
+              ${project.status === 'Completado' ? 'bg-green-500/20 text-green-300 border border-green-500/50' :
+                                project.status === 'En Progreso' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/50' :
                                     'bg-blue-500/20 text-blue-300 border border-blue-500/50'}
             `}>
-                            {project.status === 'completed' ? '✅ Completado' :
-                                project.status === 'in-progress' ? '🚧 En desarrollo' : '📋 Planeado'}
+                            {project.status === 'Completado' ? '✅ Completado' :
+                                project.status === 'En Progreso' ? '🚧 En desarrollo' : '📋 Planeado'}
                         </span>
                     </div>
 

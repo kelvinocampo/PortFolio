@@ -245,21 +245,29 @@
         },
         {
             "id": 2,
-            "title": "Tesoros India",
+            "title": "Tesoros de la India",
             "category": "backend",
-            "description": "En construccion",
-            "longDescription": "En contruccion.",
+            "description": "Plataforma web de turismo rural en Colombia que conecta a emprendedores locales con visitantes, ofreciendo experiencias y productos únicos.",
+            "longDescription": "Tesoros de la India es una plataforma de comercio electrónico enfocada en el turismo rural en Colombia. Permite a los emprendedores locales exhibir y vender sus productos, así como experiencias turísticas auténticas. La aplicación integra un asistente inteligente que ofrece recomendaciones personalizadas según el comportamiento y retroalimentación de los usuarios. Construida con tecnologías modernas como React, TypeScript, Vite y TailwindCSS, garantiza una experiencia rápida, segura e intuitiva para usuarios y emprendedores.",
             "image": "https://tesoros-india.vercel.app/images/FondoDesktop.webp",
             "technologies": [
                 "React",
+                "TypeScript",
+                "Vite",
                 "Tailwind CSS",
                 "Node.js",
-                "Mercado Pago",
+                "Express",
                 "MySQL",
-                "Express"
+                "Mercado Pago"
             ],
             "features": [
-                "En construccion"
+                "Mapa interactivo para explorar experiencias rurales",
+                "Asistente inteligente con IA para recomendaciones personalizadas",
+                "Gestión de productos y paquetes por parte de emprendedores",
+                "Sistema de reseñas y calificaciones de experiencias",
+                "Reportes de ventas semanales para emprendedores",
+                "Login seguro y perfiles personalizados",
+                "Diseño responsive con UI/UX moderna"
             ],
             "githubUrl": "https://github.com/davidar27/FrontedTesorosIndia",
             "liveUrl": "https://tesoros-india.vercel.app/",
