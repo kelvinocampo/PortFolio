@@ -58,7 +58,7 @@ const SkillCard = ({ skill, index }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, index * 100); // Delay escalonado basado en el índice
+    }, index * 10); // Delay escalonado basado en el índice
 
     return () => clearTimeout(timer);
   }, [index]);
@@ -77,7 +77,7 @@ const SkillCard = ({ skill, index }) => {
         }
       `}
       style={{
-        transitionDelay: isVisible ? '0ms' : `${index * 100}ms`
+        transitionDelay: isVisible ? '0ms' : `${index * 10}ms`
       }}
     >
       {/* Glow effect */}
@@ -275,7 +275,7 @@ export const Skills = () => {
               onClick={() => toggleCategory(category)}
               className={`
                 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
-                border-2 transform hover:scale-105 relative
+                border-2 transform hover:scale-105 relative cursor-pointer
                 ${isCategorySelected(category)
                   ? "bg-[#64ffda] text-black border-[#64ffda] shadow-lg shadow-[#64ffda]/20"
                   : "bg-[#112240] text-gray-300 border-gray-600 hover:bg-[#1a365d] hover:border-[#64ffda]/50"
@@ -344,7 +344,7 @@ export const Skills = () => {
                 hover:bg-[#64ffda] hover:text-black transition-all duration-300 
                 hover:scale-105 hover:shadow-lg hover:shadow-[#64ffda]/25
                 transform ${areFiltersVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
-                flex items-center gap-3 mx-auto
+                flex items-center gap-3 mx-auto cursor-pointer
               `}
               style={{ transitionDelay: '1400ms' }}
             >
