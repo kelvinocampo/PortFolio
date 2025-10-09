@@ -1,5 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import data from '@/data/data.json';
+
+const ICONS = {
+  'github': <i className='bx bxl-github'></i>,
+  'linkedin': <i className='bx bxl-linkedin'></i>,
+  'gmail': <i className='bx bxl-gmail'></i>,
+  'whatsapp': <i className='bx bxl-whatsapp'></i>,
+}
 
 const useIntersectionObserver = (options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -56,7 +63,10 @@ const ContactCard = ({ method, index, isVisible }) => {
             group-hover:scale-110 transition-transform duration-300
             shadow-lg
           `}>
-            {method.icon}
+            {React.cloneElement(ICONS[method.icon], {
+              className: `${ICONS[method.icon].props.className || ''} ${method.iconStyles || ''}`
+            })}
+            {/* {ICONS[method.icon]} */}
           </div>
           <div>
             <h3 className="text-lg font-bold text-white group-hover:text-[#64FFDA] transition-colors">
@@ -104,13 +114,13 @@ const ContactForm = ({ isVisible }) => {
     }
 
     setIsSubmitting(true);
-    
+
     // Simular envío del formulario
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
+
       setTimeout(() => setSubmitStatus(null), 5000);
     }, 2000);
   };
@@ -123,7 +133,7 @@ const ContactForm = ({ isVisible }) => {
   `;
 
   return (
-    <div 
+    <div
       className={`
         space-y-6 ${isVisible ? 'animate-slide-up' : 'opacity-0'}
       `}
@@ -214,8 +224,8 @@ const ContactForm = ({ isVisible }) => {
         disabled={isSubmitting}
         className={`
           w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300
-          ${isSubmitting 
-            ? 'bg-gray-600 cursor-not-allowed' 
+          ${isSubmitting
+            ? 'bg-gray-600 cursor-not-allowed'
             : 'bg-gradient-to-r from-[#64FFDA] to-[#00FFCA] text-[#0A192F] hover:shadow-lg hover:shadow-[#64FFDA]/25 hover:scale-105'
           }
         `}
@@ -291,7 +301,7 @@ export const Contact = () => {
                 Formas de Contacto
               </h3>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Elige la forma que más te convenga para conectar conmigo. 
+                Elige la forma que más te convenga para conectar conmigo.
                 Respondo rápidamente y siempre estoy abierto a nuevas oportunidades y colaboraciones.
               </p>
             </div>
@@ -352,7 +362,7 @@ export const Contact = () => {
                 Envíame un Mensaje
               </h3>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Completa el formulario a continuación y te responderé lo antes posible. 
+                Completa el formulario a continuación y te responderé lo antes posible.
                 ¡No dudes en contarme todos los detalles sobre tu proyecto!
               </p>
             </div>
@@ -371,7 +381,7 @@ export const Contact = () => {
               ¿Listo para dar vida a tu proyecto?
             </h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Transformemos tus ideas en experiencias digitales excepcionales. 
+              Transformemos tus ideas en experiencias digitales excepcionales.
               Hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos y crear algo increíble juntos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
