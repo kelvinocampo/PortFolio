@@ -376,14 +376,15 @@ export const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="mailto:kevin.ocampo@example.com"
+                href={contactMethods[0].href}
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-[#64FFDA] to-[#00FFCA] text-[#0A192F] rounded-lg font-semibold hover:shadow-lg hover:shadow-[#64FFDA]/25 hover:scale-105 transition-all duration-300"
               >
                 <span>¡Trabajemos juntos!</span>
                 <span>🚀</span>
               </a>
               <a
-                href="https://linkedin.com/in/kevin-ocampo"
+                // href="https://linkedin.com/in/kevin-ocampo"
+                href={contactMethods[1].href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-3 px-8 py-4 border-2 border-[#64FFDA] text-[#64FFDA] rounded-lg font-semibold hover:bg-[#64FFDA] hover:text-[#0A192F] hover:shadow-lg hover:shadow-[#64FFDA]/25 transition-all duration-300"
