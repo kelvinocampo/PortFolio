@@ -7,10 +7,18 @@ const navigationItems = [
   { label: 'Contacto', href: '#contact', variant: 'outline' }
 ];
 
+const ICONS = {
+  'github': <i className='bx bxl-github'></i>,
+  'linkedin': <i className='bx bxl-linkedin'></i>,
+  'gmail': <i className='bx bxl-gmail'></i>,
+  'whatsapp': <i className='bx bxl-whatsapp'></i>,
+};
+
 const socialLinks = [
-  { name: 'GitHub', href: '#', icon: '🔗' },
-  { name: 'LinkedIn', href: '#', icon: '💼' },
-  { name: 'Email', href: 'mailto:kevin@example.com', icon: '📧' }
+  { name: 'GitHub', href: '#', icon: ICONS.github },
+  { name: 'LinkedIn', href: '#', icon: ICONS.linkedin },
+  { name: 'Gmail', href: 'mailto:kevin@example.com', icon: ICONS.gmail },
+  { name: 'WhatsApp', href: '#', icon: ICONS.whatsapp }
 ];
 
 export const Header = () => {
