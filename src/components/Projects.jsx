@@ -365,7 +365,7 @@ export const Projects = () => {
             />
 
             {/* Estilos CSS */}
-            <style jsx>{`
+            <style>{`
         @keyframes fade-in {
           from { opacity: 0; }
           to { opacity: 1; }

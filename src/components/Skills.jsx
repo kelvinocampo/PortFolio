@@ -428,7 +428,7 @@ export const Skills = () => {
         )}
 
         {/* CSS personalizado para animaciones */}
-        <style jsx>{`
+        <style>{`
           @keyframes slideInUp {
             from {
               opacity: 0;

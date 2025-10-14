@@ -191,7 +191,7 @@ export const Header = () => {
       </nav>
 
       {/* Estilos CSS mejorados */}
-      <style jsx>{`
+      <style>{`
         @media (max-width: 475px) {
           .xs\\:text-4xl {
             font-size: 2.25rem;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import data from '@/data/data.json';
 
 const ICONS = {
@@ -66,7 +67,6 @@ const ContactCard = ({ method, index, isVisible }) => {
             {React.cloneElement(ICONS[method.icon], {
               className: `${ICONS[method.icon].props.className || ''} ${method.iconStyles || ''}`
             })}
-            {/* {ICONS[method.icon]} */}
           </div>
           <div>
             <h3 className="text-lg font-bold text-white group-hover:text-[#64FFDA] transition-colors">
@@ -90,6 +90,7 @@ const ContactCard = ({ method, index, isVisible }) => {
 };
 
 const ContactForm = ({ isVisible }) => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -99,6 +100,11 @@ const ContactForm = ({ isVisible }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
+  // Configura tus credenciales de EmailJS aquí
+  const EMAILJS_SERVICE_ID = 'service_po7kqns';
+  const EMAILJS_TEMPLATE_ID = 'template_d8gk8oc';
+  const EMAILJS_PUBLIC_KEY = 'QtF-9VxVVvz-Tcjlw';
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -106,7 +112,9 @@ const ContactForm = ({ isVisible }) => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus(null), 3000);
@@ -115,14 +123,33 @@ const ContactForm = ({ isVisible }) => {
 
     setIsSubmitting(true);
 
-    // Simular envío del formulario
-    setTimeout(() => {
+    try {
+      // Enviar email usando EmailJS
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'KEVIN OCAMPO', // Puedes personalizar esto
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      console.log('Email enviado exitosamente:', result.text);
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
 
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
+    } catch (error) {
+      console.error('Error al enviar email:', error);
+      setIsSubmitting(false);
+      setSubmitStatus('error-send');
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   const inputClasses = `
@@ -133,7 +160,9 @@ const ContactForm = ({ isVisible }) => {
   `;
 
   return (
-    <div
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit}
       className={`
         space-y-6 ${isVisible ? 'animate-slide-up' : 'opacity-0'}
       `}
@@ -152,6 +181,7 @@ const ContactForm = ({ isVisible }) => {
             onChange={handleInputChange}
             placeholder="Tu nombre completo"
             className={inputClasses}
+            required
           />
         </div>
         <div>
@@ -165,6 +195,7 @@ const ContactForm = ({ isVisible }) => {
             onChange={handleInputChange}
             placeholder="tu.email@ejemplo.com"
             className={inputClasses}
+            required
           />
         </div>
       </div>
@@ -181,6 +212,7 @@ const ContactForm = ({ isVisible }) => {
           onChange={handleInputChange}
           placeholder="¿De qué quieres hablar?"
           className={inputClasses}
+          required
         />
       </div>
 
@@ -196,6 +228,7 @@ const ContactForm = ({ isVisible }) => {
           onChange={handleInputChange}
           placeholder="Cuéntame sobre tu proyecto, idea o simplemente saluda..."
           className={`${inputClasses} resize-vertical min-h-[120px]`}
+          required
         />
       </div>
 
@@ -218,9 +251,18 @@ const ContactForm = ({ isVisible }) => {
         </div>
       )}
 
+      {submitStatus === 'error-send' && (
+        <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 animate-slide-in">
+          <div className="flex items-center space-x-2">
+            <span>❌</span>
+            <p>Hubo un error al enviar el mensaje. Por favor intenta nuevamente.</p>
+          </div>
+        </div>
+      )}
+
       {/* Submit button */}
       <button
-        onClick={handleSubmit}
+        type="submit"
         disabled={isSubmitting}
         className={`
           w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300
@@ -242,7 +284,7 @@ const ContactForm = ({ isVisible }) => {
           </div>
         )}
       </button>
-    </div>
+    </form>
   );
 };
 
@@ -393,7 +435,6 @@ export const Contact = () => {
                 <span>🚀</span>
               </a>
               <a
-                // href="https://linkedin.com/in/kevin-ocampo"
                 href={contactMethods[1].href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -408,7 +449,7 @@ export const Contact = () => {
       </div>
 
       {/* Estilos CSS */}
-      <style jsx>{`
+      <style>{`
         @keyframes fade-in {
           from { opacity: 0; }
           to { opacity: 1; }
