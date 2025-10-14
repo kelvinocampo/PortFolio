@@ -102,7 +102,7 @@ const ContactForm = ({ isVisible }) => {
 
   // Configura tus credenciales de EmailJS aquí
   const EMAILJS_SERVICE_ID = 'service_po7kqns';
-  const EMAILJS_TEMPLATE_ID = 'template_d8gk8oc';
+  const EMAILJS_TEMPLATE_ID = 'template_nonskja';
   const EMAILJS_PUBLIC_KEY = 'QtF-9VxVVvz-Tcjlw';
 
   const handleInputChange = (e) => {
