@@ -2,6 +2,26 @@
 import { useState, useEffect } from "react";
 import data from "@/data/data.json";
 
+// ✅ Custom hook with dependencies
+const useIntersectionObserver = (options = {}) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [element, setElement] = useState(null);
+
+  useEffect(() => {
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsIntersecting(entry.isIntersecting),
+      { threshold: 0.0, ...options }
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [element, options.root, options.threshold, options.rootMargin]);
+
+  return { ref: setElement, isIntersecting };
+};
+
 const skillsData = data.skills;
 
 const categoryColors = {
@@ -140,6 +160,7 @@ const SkillCard = ({ skill, index }) => {
 };
 
 export const Skills = () => {
+  
   const [selectedCategories, setSelectedCategories] = useState(["Todos"]);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [areFiltersVisible, setAreFiltersVisible] = useState(false);
