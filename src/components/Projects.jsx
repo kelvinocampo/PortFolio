@@ -55,7 +55,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     <div className="absolute top-4 right-4">
                         <button
                             onClick={onClose}
-                            className="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#64FFDA]/20 transition-colors"
+                            className="cursor-pointer w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#64FFDA]/20 transition-colors"
                         >
                             ✕
                         </button>

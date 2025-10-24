@@ -278,7 +278,7 @@ const ContactForm = ({ isVisible }) => {
             <span>Enviando...</span>
           </div>
         ) : (
-          <div className="flex items-center justify-center space-x-2">
+          <div className="cursor-pointer flex items-center justify-center space-x-2">
             <span>Enviar Mensaje</span>
             <span>🚀</span>
           </div>
