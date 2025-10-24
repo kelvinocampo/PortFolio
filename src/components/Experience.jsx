@@ -152,6 +152,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
 export const Experience = () => {
   const { ref: headerRef, isIntersecting: headerIsVisible } = useIntersectionObserver();
   const { ref: timelineRef, isIntersecting: timelineIsVisible } = useIntersectionObserver();
+  const { ref: statsRef, isIntersecting: statsIsVisible } = useIntersectionObserver();
 
 
   const [showAll, setShowAll] = useState(false);
@@ -165,9 +166,9 @@ export const Experience = () => {
       id="experience"
       className="w-full bg-[#0A192F] text-gray-300 py-20 px-4 sm:px-6 lg:px-8"
     >
-      <div ref={headerRef} className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <p
             className={`
               text-[#64FFDA] text-sm uppercase tracking-widest mb-2 font-mono
@@ -238,9 +239,10 @@ export const Experience = () => {
 
         {/* Stats */}
         <div
+          ref={statsRef}
           className={`
             mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 
-            ${timelineIsVisible ? 'animate-slide-up delay-1000' : 'opacity-0'}
+            ${statsIsVisible ? 'animate-slide-up delay-1000' : 'opacity-0'}
           `}
         >
           <StatCard value={data.info.years_worked} label="Años de experiencia" />
