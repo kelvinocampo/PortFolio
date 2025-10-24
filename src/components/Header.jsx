@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import data from '@/data/data.json';
 
 const navigationItems = [
   { label: 'Experiencia', href: '#experience', variant: 'primary' },
@@ -15,10 +16,26 @@ const ICONS = {
 };
 
 const socialLinks = [
-  { name: 'GitHub', href: '#', icon: ICONS.github },
-  { name: 'LinkedIn', href: '#', icon: ICONS.linkedin },
-  { name: 'Gmail', href: 'mailto:kevin@example.com', icon: ICONS.gmail },
-  { name: 'WhatsApp', href: '#', icon: ICONS.whatsapp }
+  { 
+    name: data.contact.find(item => item.icon === 'github').name, 
+    href: data.contact.find(item => item.icon === 'github').href, 
+    icon: ICONS.github 
+  },
+  { 
+    name: data.contact.find(item => item.icon === 'linkedin').name, 
+    href: data.contact.find(item => item.icon === 'linkedin').href, 
+    icon: ICONS.linkedin 
+  },
+  { 
+    name: data.contact.find(item => item.icon === 'gmail').name, 
+    href: data.contact.find(item => item.icon === 'gmail').href, 
+    icon: ICONS.gmail 
+  },
+  { 
+    name: data.contact.find(item => item.icon === 'whatsapp').name, 
+    href: data.contact.find(item => item.icon === 'whatsapp').href, 
+    icon: ICONS.whatsapp 
+  }
 ];
 
 export const Header = () => {
