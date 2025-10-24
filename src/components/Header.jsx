@@ -127,13 +127,6 @@ export const Header = () => {
               </a>
             ))}
           </div>
-
-          {/* Scroll indicator - Solo visible en pantallas grandes */}
-          <div className="hidden sm:block absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-[#64FFDA] rounded-full flex justify-center">
-              <div className="w-1 h-2 sm:h-3 bg-[#64FFDA] rounded-full mt-2 animate-pulse"></div>
-            </div>
-          </div>
         </div>
       </header>
 

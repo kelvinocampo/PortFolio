@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import data from '@/data/data.json';
 
 const experienceData = data.experience;
@@ -59,32 +59,21 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
 
       {/* Content */}
       <div
-        className={`w-full md:w-5/12 ${isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'}`}
+        className={`w-full md:w-5/12`}
       >
         <div className="bg-[#112240] rounded-xl p-6 border border-gray-700/30 hover:border-[#64FFDA]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#64FFDA]/10 group-hover:scale-105">
-          {/* Header */}
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center space-x-3">
-              <span className="text-3xl">{experience.logo}</span>
-              <div>
-                <h3 className="text-xl font-bold text-white group-hover:text-[#64FFDA] transition-colors">
-                  {experience.position}
-                </h3>
-                <p className="text-[#64FFDA] font-semibold">{experience.company}</p>
-              </div>
+          <div className="flex items-start gap-3 mb-3">
+            <span className="text-3xl sm:text-4xl flex-shrink-0 hidden sm:block">{experience.logo}</span>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{experience.position}</h3>
+              <p className="text-[#64FFDA] font-semibold text-sm sm:text-base">{experience.company}</p>
+              <span className={`inline-block mt-2 px-2 py-1 rounded-full text-xs font-medium
+                  ${experience.type === 'Tiempo Completo' ? 'bg-green-500/20 text-green-300' :
+                  experience.type === 'Freelance' ? 'bg-blue-500/20 text-blue-300' :
+                    'bg-purple-500/20 text-purple-300'}`}>
+                {experience.type}
+              </span>
             </div>
-            <span
-              className={`
-                px-3 py-1 rounded-full text-xs font-medium
-                ${experience.type === 'Tiempo Completo'
-                  ? 'bg-green-500/20 text-green-300'
-                  : experience.type === 'Freelance'
-                  ? 'bg-blue-500/20 text-blue-300'
-                  : 'bg-purple-500/20 text-purple-300'}
-              `}
-            >
-              {experience.type}
-            </span>
           </div>
 
           {/* Meta */}
@@ -122,14 +111,13 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
               onClick={() => setIsExpanded(!isExpanded)}
               aria-expanded={isExpanded}
               aria-controls={`achievements-${experience.id}`}
-              className="flex items-center text-[#64FFDA] hover:text-white transition-colors font-medium"
+              className="cursor-pointer flex items-center text-[#64FFDA] hover:text-white transition-colors font-medium"
             >
               <span className="mr-2">{isExpanded ? '📖' : '🏆'}</span>
               {isExpanded ? 'Ocultar logros' : 'Ver logros'}
               <span
-                className={`ml-2 transform transition-transform ${
-                  isExpanded ? 'rotate-180' : ''
-                }`}
+                className={`ml-2 transform transition-transform ${isExpanded ? 'rotate-180' : ''
+                  }`}
               >
                 ▼
               </span>
@@ -165,14 +153,21 @@ export const Experience = () => {
   const { ref: headerRef, isIntersecting: headerIsVisible } = useIntersectionObserver();
   const { ref: timelineRef, isIntersecting: timelineIsVisible } = useIntersectionObserver();
 
+
+  const [showAll, setShowAll] = useState(false);
+
+  // Mostrar los últimos 3 por defecto
+  const displayedExperiences = showAll ? experienceData : experienceData.slice(-3);
+  const hasMoreThanThree = experienceData.length > 3;
+
   return (
     <section
       id="experience"
       className="w-full bg-[#0A192F] text-gray-300 py-20 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-6xl mx-auto">
+      <div ref={headerRef} className="max-w-6xl mx-auto">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-16">
+        <div className="text-center mb-16">
           <p
             className={`
               text-[#64FFDA] text-sm uppercase tracking-widest mb-2 font-mono
@@ -209,7 +204,7 @@ export const Experience = () => {
         <div ref={timelineRef} className="relative">
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#64FFDA] via-[#64FFDA]/50 to-transparent"></div>
 
-          {experienceData.map((experience, index) => (
+          {displayedExperiences.map((experience, index) => (
             <ExperienceCard
               key={experience.id}
               experience={experience}
@@ -218,6 +213,28 @@ export const Experience = () => {
             />
           ))}
         </div>
+
+        {/* Show More/Less Button */}
+        {hasMoreThanThree && (
+          <div className="flex justify-center mt-8 mb-12">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="cursor-pointer px-6 py-3 bg-[#64FFDA]/10 hover:bg-[#64FFDA]/20 text-[#64FFDA] rounded-lg font-medium transition-all duration-300 border border-[#64FFDA]/30 hover:border-[#64FFDA]/50 flex items-center gap-2"
+            >
+              {showAll ? (
+                <>
+                  <span>Mostrar menos</span>
+                  <span className="transform rotate-180">▼</span>
+                </>
+              ) : (
+                <>
+                  <span>Ver todas las experiencias ({experienceData.length})</span>
+                  <span>▼</span>
+                </>
+              )}
+            </button>
+          </div>
+        )}
 
         {/* Stats */}
         <div
