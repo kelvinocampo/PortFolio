@@ -12,12 +12,14 @@
             "period": "Abril 2025 - 24 horas",
             "location": "Armenia, Quindío, Colombia",
             "type": "Hackathon",
-            "description": "Desarrollo de módulos para la gestión de pacientes, insumos, fichas clínicas y facturación.",
+            "description": "Implementación de un Sistema Integral de Gestión Clínica (HIS) sobre la plataforma Odoo 18, diseñado para digitalizar y optimizar el flujo completo de atención médica, desde el ingreso del paciente hasta el alta. El sistema centraliza la Historia Clínica Digital y asegura la trazabilidad de todos los procedimientos.",
             "achievements": [
-                "Reestructuración del sitio web de la clínica incluido en el reto, mejorando la navegación y la experiencia de usuario."
+                "Desarrollo de módulos clave (Pacientes, Prescripciones, Procedimientos y Historia Clínica Digital) para la gestión unificada de atenciones.",
+                "Implementación de funcionalidades como alertas de alergias en la ficha médica y programación de intervenciones con listas de chequeo.",
+                "Integración de la gestión clínica con módulos estándar de Odoo (CRM y Facturación) para un control administrativo completo."
             ],
             "technologies": [
-                "Odoo",
+                "Odoo 18",
                 "Python",
                 "PostgreSQL",
                 "XML"
@@ -26,6 +28,28 @@
         },
         {
             "id": 2,
+            "company": "Bootcamp Analisis de datos Explorador Talento Tech",
+            "position": "Estudiante - Desarrollador",
+            "period": "Agosto 2025 - Octubre 17 2025",
+            "location": "Armenia, Quindío, Colombia",
+            "type": "Bootcamp",
+            "description": "Participación en un bootcamp enfocado en el análisis de datos exploratorio relacionados con la adopción y el mercado de vehículos eléctricos (VE) en Colombia.",
+            "achievements": [
+                "Limpieza, transformación y visualización de datasets reales sobre el registro, consumo y distribución de VE en el país, utilizando Python y librerías como Pandas y Matplotlib.",
+                "Realización de un Análisis Exploratorio y Comparativo Regional para el mercado de vehículos eléctricos, contrastando los datos de Colombia con los de otros países clave de Latinoamérica y México."
+            ],
+            "technologies": [
+                "Python",
+                "Pandas",
+                "NumPy",
+                "Matplotlib/Seaborn",
+                "Plotly",
+                "Jupyter Notebooks"
+            ],
+            "logo": "📊"
+        },
+        {
+            "id": 3,
             "company": "IBG (Iván Botero Gómez)",
             "position": "Aprendiz",
             "period": "Julio 2025 - Presente",

@@ -65,8 +65,8 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
           <div className="flex items-start gap-3 mb-3">
             <span className="text-3xl sm:text-4xl flex-shrink-0 hidden sm:block">{experience.logo}</span>
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{experience.position}</h3>
-              <p className="text-[#64FFDA] font-semibold text-sm sm:text-base">{experience.company}</p>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{experience.company}</h3>
+              <p className="text-[#64FFDA] font-semibold text-sm sm:text-base">{experience.position}</p>
               <span className={`inline-block mt-2 px-2 py-1 rounded-full text-xs font-medium
                   ${experience.type === 'Tiempo Completo' ? 'bg-green-500/20 text-green-300' :
                   experience.type === 'Freelance' ? 'bg-blue-500/20 text-blue-300' :
