@@ -1,16 +1,5 @@
 {
-  "routes": [
-    {
-      "src": "/(favicon\\.ico|favicon\\.svg|robots\\.txt|sitemap\\.xml)",
-      "dest": "/$1"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
