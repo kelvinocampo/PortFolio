@@ -79,9 +79,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                             <h2 className="text-3xl font-bold text-white mb-2">{project.title}</h2>
                             <p className="text-[#64FFDA] font-medium">{project.client} • {project.year}</p>
                         </div>
-                        <div className="text-right text-sm text-gray-400">
-                            <p>Duración: {project.duration}</p>
-                        </div>
+                        {project.duration && (
+                            <div className="text-right text-sm text-gray-400">
+                                <p>Duración: {project.duration}</p>
+                            </div>
+                        )}
                     </div>
 
                     <p className="text-gray-300 text-lg leading-relaxed mb-8">
