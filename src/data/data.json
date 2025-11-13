@@ -299,6 +299,35 @@
             "year": "2025",
             "client": "SENA",
             "duration": "4 meses"
+        },
+        {
+            "id": 3,
+            "title": "Temporal Realtime Chat",
+            "category": "fullstack",
+            "description": "Una aplicación web de chat grupal y privado que permite la comunicación instantánea y el envío de mensajes de texto, imágenes y grabaciones de audio.",
+            "longDescription": "Desarrollo completo de una plataforma de chat en tiempo real que utiliza WebSockets (Socket.IO) para manejar la comunicación bidireccional entre múltiples clientes. La aplicación soporta salas de chat dinámicas y ofrece una experiencia multimedia completa, permitiendo a los usuarios enviar texto, imágenes (codificadas en Base64) y grabaciones de audio (usando la API MediaRecorder del navegador). La interfaz fue construida con Next.js y estilizada con Tailwind CSS para garantizar un diseño moderno y eficiente.",
+            "image": "assets/images/realtime-chat.png",
+            "technologies": [
+                "Next JS",
+                "TypeScript",
+                "Tailwind CSS",
+                "Socket.IO",
+                "Node.js",
+                "Express",
+                "MediaRecorder API"
+            ],
+            "features": [
+                "Comunicación bidireccional instantánea (WebSockets)",
+                "Soporte para salas de chat dinámicas (Room IDs)",
+                "Envío de texto, imágenes (Base64) y audio (Blob/Base64)",
+                "Funcionalidad de grabación de audio integrada (MediaRecorder)",
+                "Vista previa y gestión de archivos multimedia antes de enviar"
+            ],
+            "githubUrl": "https://github.com/kelvinocampo/realtime-chat",
+            "liveUrl": "https://github.com/kelvinocampo/realtime-chat",
+            "status": "Completado",
+            "year": "2025",
+            "client": "Personal"
         }
     ],
     "contact": [
