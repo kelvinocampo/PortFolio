@@ -245,7 +245,7 @@
             "category": "fullstack",
             "description": "SENAGROL conecta agricultores con consumidores, optimizando la rentabilidad y mejorando la comercialización de sus cultivos.",
             "longDescription": "Plataforma creada para facilitar que los agricultores lleguen directamente a los consumidores finales, asegurando la rentabilidad de sus cultivos. La aplicación aborda problemas críticos del sector, como el acceso limitado a mercados, la falta de visibilidad de los productos y la descoordinación entre producción y demanda, ofreciendo soluciones tecnológicas eficientes para mejorar la comercialización agrícola.",
-            "image": "assets/images/senagrol.webp",
+            "image": "/assets/images/senagrol.webp",
             "technologies": [
                 "React",
                 "Tailwind CSS",
@@ -306,7 +306,7 @@
             "category": "fullstack",
             "description": "Una aplicación web de chat grupal y privado que permite la comunicación instantánea y el envío de mensajes de texto, imágenes y grabaciones de audio.",
             "longDescription": "Desarrollo completo de una plataforma de chat en tiempo real que utiliza WebSockets (Socket.IO) para manejar la comunicación bidireccional entre múltiples clientes. La aplicación soporta salas de chat dinámicas y ofrece una experiencia multimedia completa, permitiendo a los usuarios enviar texto, imágenes (codificadas en Base64) y grabaciones de audio (usando la API MediaRecorder del navegador). La interfaz fue construida con Next.js y estilizada con Tailwind CSS para garantizar un diseño moderno y eficiente.",
-            "image": "assets/images/realtime-chat.png",
+            "image": "/assets/images/realtime-chat.png",
             "technologies": [
                 "Next JS",
                 "TypeScript",
@@ -328,6 +328,39 @@
             "status": "Completado",
             "year": "2025",
             "client": "Personal"
+        },
+        {
+            "id": 4,
+            "title": "Gemini Key Manager Chat",
+            "category": "fullstack",
+            "description": "Aplicación móvil Flutter que centraliza la gestión de claves API de Gemini con un cliente de chat integrado impulsado por IA.",
+            "longDescription": "Aplicación móvil desarrollada en Flutter que permite gestionar de forma segura hasta 10 API Keys de Gemini AI, con un sistema de chat integrado que utiliza el modelo Gemini 2.5 Flash. La aplicación ofrece almacenamiento local seguro mediante SQLite, soporte multiidioma (Español/Inglés), temas claro y oscuro, y la capacidad de cambiar entre diferentes claves API en tiempo real. Diseñada con arquitectura Provider para gestión de estado eficiente y una experiencia de usuario fluida.",
+            "image": "/assets/images/flutter-ia.png",
+            "technologies": [
+                "Flutter",
+                "Dart",
+                "Provider",
+                "SQLite",
+                "Gemini AI API",
+                "Shared Preferences",
+                "Flutter Localizations"
+            ],
+            "features": [
+                "Gestión segura de hasta 10 API Keys de Gemini",
+                "Chat integrado con modelo Gemini 2.5 Flash",
+                "Almacenamiento local seguro con SQLite",
+                "Soporte multiidioma (Español e Inglés)",
+                "Temas claro y oscuro personalizables",
+                "Cambio de clave activa en tiempo real",
+                "Interfaz intuitiva y moderna",
+                "Privacidad total - datos almacenados localmente"
+            ],
+            "githubUrl": "https://github.com/kelvinocampo/Flutter_IA",
+            "liveUrl": "https://github.com/kelvinocampo/Flutter_IA/releases",
+            "status": "Completado",
+            "year": "2025",
+            "client": "Personal",
+            "duration": "2 meses"
         }
     ],
     "contact": [
