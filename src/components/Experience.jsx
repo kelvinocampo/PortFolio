@@ -245,9 +245,9 @@ export const Experience = () => {
             ${statsIsVisible ? 'animate-slide-up delay-1000' : 'opacity-0'}
           `}
         >
-          <StatCard value={data.info.years_worked} label="Años de experiencia" />
-          <StatCard value={data.info.proyects_completed} label="Proyectos completados" />
-          <StatCard value={data.info.companies} label="Empresas" />
+          {data.info.map((item) => (
+            <StatCard value={item.value} label={item.label} />
+            ))}
           <StatCard value={usedTechnologies} label="Tecnologías" />
         </div>
       </div>

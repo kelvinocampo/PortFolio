@@ -239,8 +239,8 @@ export const Skills = () => {
   };
 
   const allFilteredSkills = getFilteredSkills();
-  const displayedSkills = showAllSkills ? allFilteredSkills : allFilteredSkills.slice(0, 10);
-  const hasMoreSkills = allFilteredSkills.length > 10;
+  const displayedSkills = showAllSkills ? allFilteredSkills : allFilteredSkills.slice(0, 12);
+  const hasMoreSkills = allFilteredSkills.length > 12;
 
   // Contar skills por categoría (para mostrar en los botones)
   const getSkillCountByCategory = (category) => {
@@ -367,12 +367,11 @@ export const Skills = () => {
                 transform ${areFiltersVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
                 flex items-center gap-3 mx-auto cursor-pointer
               `}
-              style={{ transitionDelay: '1400ms' }}
             >
               <span>
                 {showAllSkills 
                   ? `Mostrar menos (${displayedSkills.length} de ${allFilteredSkills.length})`
-                  : `Ver todas las habilidades (+${allFilteredSkills.length - 10} más)`
+                  : `Ver todas las habilidades (+${allFilteredSkills.length - 12} más)`
                 }
               </span>
               <svg 

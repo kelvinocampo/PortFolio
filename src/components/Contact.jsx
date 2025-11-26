@@ -265,7 +265,7 @@ const ContactForm = ({ isVisible }) => {
         type="submit"
         disabled={isSubmitting}
         className={`
-          w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300
+          w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 cursor-pointer
           ${isSubmitting
             ? 'bg-gray-600 cursor-not-allowed'
             : 'bg-gradient-to-r from-[#64FFDA] to-[#00FFCA] text-[#0A192F] hover:shadow-lg hover:shadow-[#64FFDA]/25 hover:scale-105'
@@ -278,7 +278,7 @@ const ContactForm = ({ isVisible }) => {
             <span>Enviando...</span>
           </div>
         ) : (
-          <div className="cursor-pointer flex items-center justify-center space-x-2">
+          <div className="flex items-center justify-center space-x-2">
             <span>Enviar Mensaje</span>
             <span>🚀</span>
           </div>

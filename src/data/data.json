@@ -1,9 +1,18 @@
 {
-    "info": {
-        "years_worked": "-1",
-        "proyects_completed": "+10",
-        "companies": "1"
-    },
+    "info": [
+        {
+            "value": "6",
+            "label": "Meses de experiencia"
+        },
+        {
+            "value": "+10",
+            "label": "Proyectos completados"
+        },
+        {
+            "value": "1",
+            "label": "Empresas"
+        }
+    ],
     "experience": [
         {
             "id": 1,
