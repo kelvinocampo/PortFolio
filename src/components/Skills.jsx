@@ -2,25 +2,7 @@
 import { useState, useEffect } from "react";
 import data from "@/data/data.json";
 
-// ✅ Custom hook with dependencies
-const useIntersectionObserver = (options = {}) => {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const [element, setElement] = useState(null);
-
-  useEffect(() => {
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsIntersecting(entry.isIntersecting),
-      { threshold: 0.0, ...options }
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, [element, options.root, options.threshold, options.rootMargin]);
-
-  return { ref: setElement, isIntersecting };
-};
+const uiData = data.ui.skills
 
 const skillsData = data.skills;
 
@@ -51,21 +33,16 @@ const getLevelNumber = (level) => {
   return levels[level] || 0;
 };
 
-// Función para obtener todas las categorías de una skill
 const getSkillCategories = (skill) => {
-  // Si categories es un array, usarlo directamente
   if (Array.isArray(skill.categories)) {
     return skill.categories;
   }
-  // Si category es un array (formato inconsistente), usarlo
   if (Array.isArray(skill.category)) {
     return skill.category;
   }
-  // Si category es un string, convertirlo a array
   if (skill.category) {
     return [skill.category];
   }
-  // Si no hay categorías, devolver array vacío
   return [];
 };
 
@@ -91,8 +68,8 @@ const SkillCard = ({ skill, index }) => {
         hover:scale-105 hover:-translate-y-2 cursor-pointer
         border border-gray-700/50 hover:border-[#64ffda]/50
         ${skill.level ? levelColors[skill.level] || "" : ""}
-        ${isVisible 
-          ? 'opacity-100 translate-y-0 scale-100' 
+        ${isVisible
+          ? 'opacity-100 translate-y-0 scale-100'
           : 'opacity-0 translate-y-8 scale-95'
         }
       `}
@@ -160,8 +137,8 @@ const SkillCard = ({ skill, index }) => {
 };
 
 export const Skills = () => {
-  
-  const [selectedCategories, setSelectedCategories] = useState(["Todos"]);
+
+  const [selectedCategories, setSelectedCategories] = useState([uiData.all_skills]);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [areFiltersVisible, setAreFiltersVisible] = useState(false);
   const [showAllSkills, setShowAllSkills] = useState(false);
@@ -185,25 +162,25 @@ export const Skills = () => {
       const skillCategories = getSkillCategories(skill);
       skillCategories.forEach(category => categorySet.add(category));
     });
-    return ["Todos", ...Array.from(categorySet).sort()];
+    return [uiData.all_skills, ...Array.from(categorySet).sort()];
   };
 
   const categories = getAllCategories();
 
   const toggleCategory = (category) => {
-    if (category === "Todos") {
+    if (category === uiData.all_skills) {
       // Si se selecciona "Todos", mostrar todas las categorías
-      setSelectedCategories(["Todos"]);
+      setSelectedCategories([uiData.all_skills]);
     } else {
       setSelectedCategories(prevCategories => {
         // Remover "Todos" si está presente
-        const withoutTodos = prevCategories.filter(cat => cat !== "Todos");
-        
+        const withoutTodos = prevCategories.filter(cat => cat !== uiData.all_skills);
+
         if (prevCategories.includes(category)) {
           // Si ya está seleccionada, quitarla
           const newCategories = withoutTodos.filter(cat => cat !== category);
           // Si no queda ninguna categoría, volver a "Todos"
-          return newCategories.length > 0 ? newCategories : ["Todos"];
+          return newCategories.length > 0 ? newCategories : [uiData.all_skills];
         } else {
           // Si no está seleccionada, agregarla
           return [...withoutTodos, category];
@@ -228,13 +205,13 @@ export const Skills = () => {
 
   // Filtrar skills basado en las categorías seleccionadas
   const getFilteredSkills = () => {
-    let filtered = selectedCategories.includes("Todos")
+    let filtered = selectedCategories.includes(uiData.all_skills)
       ? skillsData
       : skillsData.filter((skill) => {
-          const skillCategories = getSkillCategories(skill);
-          return skillCategories.some(category => selectedCategories.includes(category));
-        });
-    
+        const skillCategories = getSkillCategories(skill);
+        return skillCategories.some(category => selectedCategories.includes(category));
+      });
+
     return sortSkillsByLevel([...filtered]);
   };
 
@@ -244,8 +221,8 @@ export const Skills = () => {
 
   // Contar skills por categoría (para mostrar en los botones)
   const getSkillCountByCategory = (category) => {
-    if (category === "Todos") return skillsData.length;
-    return skillsData.filter(skill => 
+    if (category === uiData.all_skills) return skillsData.length;
+    return skillsData.filter(skill =>
       getSkillCategories(skill).includes(category)
     ).length;
   };
@@ -270,26 +247,24 @@ export const Skills = () => {
     >
       <div className="max-w-6xl w-full">
         {/* Encabezado */}
-        <div className={`text-center mb-10 transform transition-all duration-700 ${
-          isHeaderVisible 
-            ? 'opacity-100 translate-y-0' 
+        <div className={`text-center mb-10 transform transition-all duration-700 ${isHeaderVisible
+            ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-4'
-        }`}>
+          }`}>
           <p className="text-[#64ffda] text-sm uppercase tracking-widest mb-2 font-mono">
-            Mi Stack Tecnológico
+            {uiData.title[0]}
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Habilidades & Tecnologías
+            {uiData.title[1]}
           </h2>
           <div className="w-20 h-1 bg-[#64ffda] mx-auto rounded-full" />
         </div>
 
         {/* Filtros de categorías */}
-        <div className={`flex justify-center gap-3 mb-8 flex-wrap transform transition-all duration-700 ${
-          areFiltersVisible 
-            ? 'opacity-100 translate-y-0' 
+        <div className={`flex justify-center gap-3 mb-8 flex-wrap transform transition-all duration-700 ${areFiltersVisible
+            ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-4'
-        }`}>
+          }`}>
           {categories.map((category, index) => (
             <button
               key={category}
@@ -316,31 +291,30 @@ export const Skills = () => {
         </div>
 
         {/* Información de filtros activos */}
-        <div className={`text-center mb-8 transform transition-all duration-500 ${
-          areFiltersVisible 
-            ? 'opacity-100 translate-y-0' 
+        <div className={`text-center mb-8 transform transition-all duration-500 ${areFiltersVisible
+            ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-2'
-        }`} style={{ transitionDelay: '1000ms' }}>
-          {selectedCategories.includes("Todos") ? (
+          }`} style={{ transitionDelay: '1000ms' }}>
+          {selectedCategories.includes(uiData.all_skills) ? (
             <div className="text-sm">
               <p className="text-gray-400 mb-1">
-                Mostrando {displayedSkills.length} de {skillsData.length} tecnologías
+                {uiData.showed[0]} {displayedSkills.length} {uiData.showed[1]} {skillsData.length} {uiData.showed[2]}
               </p>
               {!showAllSkills && hasMoreSkills && (
                 <p className="text-gray-500 text-xs">
-                  Ordenadas por nivel de dominio • Las más dominadas primero
+                  {uiData.label}
                 </p>
               )}
             </div>
           ) : (
             <div className="text-sm">
               <p className="text-gray-400 mb-2">
-                Filtrando por: <span className="text-[#64ffda]">{selectedCategories.join(", ")}</span>
+                {uiData.filtering} <span className="text-[#64ffda]">{selectedCategories.join(", ")}</span>
               </p>
               <p className="text-gray-500">
-                Mostrando {displayedSkills.length} de {allFilteredSkills.length} tecnología{allFilteredSkills.length !== 1 ? 's' : ''} 
+                {uiData.showed[0]} {displayedSkills.length} {uiData.showed[1]} {allFilteredSkills.length} {uiData.showed[allFilteredSkills.length !== 1 ? 2 : 3]}
                 {!showAllSkills && hasMoreSkills && (
-                  <span className="block text-xs mt-1">Ordenadas por dominio</span>
+                  <span className="block text-xs mt-1">{uiData.short_label}</span>
                 )}
               </p>
             </div>
@@ -369,15 +343,15 @@ export const Skills = () => {
               `}
             >
               <span>
-                {showAllSkills 
-                  ? `Mostrar menos (${displayedSkills.length} de ${allFilteredSkills.length})`
-                  : `Ver todas las habilidades (+${allFilteredSkills.length - 12} más)`
+                {showAllSkills
+                  ? `${uiData.show_less[0]} (${displayedSkills.length} ${uiData.show_less[1]} ${allFilteredSkills.length})`
+                  : `${uiData.see_all[0]} (+${allFilteredSkills.length - 12} ${uiData.see_all[1]})`
                 }
               </span>
-              <svg 
-                className={`w-5 h-5 transition-transform duration-300 ${showAllSkills ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className={`w-5 h-5 transition-transform duration-300 ${showAllSkills ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -390,16 +364,16 @@ export const Skills = () => {
         {allFilteredSkills.length === 0 && (
           <div className="text-center mt-10 p-8 bg-[#112240]/50 rounded-xl border border-gray-700/30 mb-12">
             <div className="text-4xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-white mb-2">No hay resultados</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">{uiData.not_result}</h3>
             <p className="text-gray-400 mb-4">
-              No se encontraron tecnologías que coincidan con los filtros: 
+              {uiData.not_found}
               <span className="text-[#64ffda] font-medium"> {selectedCategories.join(", ")}</span>
             </p>
             <button
-              onClick={() => setSelectedCategories(["Todos"])}
+              onClick={() => setSelectedCategories([uiData.all_skills])}
               className="px-4 py-2 bg-[#64ffda] text-black rounded-lg font-medium hover:bg-[#64ffda]/80 transition-colors"
             >
-              Ver todas las tecnologías
+              {uiData.see_skills}
             </button>
           </div>
         )}
@@ -407,20 +381,19 @@ export const Skills = () => {
         {/* Estadísticas dinámicas */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            { value: allFilteredSkills.length, label: selectedCategories.includes("Todos") ? "Total" : "Filtradas" },
-            { value: skillsByLevel.Avanzado || 0, label: "Avanzado" },
-            { value: skillsByLevel.Intermedio || 0, label: "Intermedio" },
-            { value: skillsByLevel.Basico || 0, label: "Básico" }
+            { value: allFilteredSkills.length, label: selectedCategories.includes(uiData.all_skills) ? uiData.all_skills : uiData.filter },
+            { value: skillsByLevel.Avanzado || 0, label: uiData.level_label.advanced },
+            { value: skillsByLevel.Intermedio || 0, label: uiData.level_label.medium },
+            { value: skillsByLevel.Basico || 0, label: uiData.level_label.basic }
           ].map((stat, index) => (
-            <div 
+            <div
               key={stat.label}
-              className={`p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30 transform transition-all duration-700 ${
-                areFiltersVisible 
-                  ? 'opacity-100 translate-y-0 scale-100' 
+              className={`p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30 transform transition-all duration-700 ${areFiltersVisible
+                  ? 'opacity-100 translate-y-0 scale-100'
                   : 'opacity-0 translate-y-8 scale-95'
-              }`}
-              style={{ 
-                transitionDelay: `${1200 + index * 100}ms` 
+                }`}
+              style={{
+                transitionDelay: `${1200 + index * 100}ms`
               }}
             >
               <h3 className="text-2xl font-bold text-[#64ffda] mb-2 counter" data-target={stat.value}>
@@ -432,17 +405,16 @@ export const Skills = () => {
         </div>
 
         {/* Botón para limpiar filtros */}
-        {!selectedCategories.includes("Todos") && (
-          <div className={`text-center mt-8 transform transition-all duration-500 ${
-            areFiltersVisible 
-              ? 'opacity-100 translate-y-0' 
+        {!selectedCategories.includes(uiData.all_skills) && (
+          <div className={`text-center mt-8 transform transition-all duration-500 ${areFiltersVisible
+              ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-4'
-          }`} style={{ transitionDelay: '1600ms' }}>
+            }`} style={{ transitionDelay: '1600ms' }}>
             <button
-              onClick={() => setSelectedCategories(["Todos"])}
+              onClick={() => setSelectedCategories([uiData.all_skills])}
               className="px-6 py-3 bg-transparent border-2 border-[#64ffda] text-[#64ffda] rounded-lg font-medium hover:bg-[#64ffda] hover:text-black transition-all duration-300 hover:scale-105"
             >
-              Limpiar filtros ({selectedCategories.length} activo{selectedCategories.length !== 1 ? 's' : ''})
+              {uiData.clear[0]} ({selectedCategories.length} {uiData.clear[selectedCategories.length !== 1 ? 1 : 2]})
             </button>
           </div>
         )}

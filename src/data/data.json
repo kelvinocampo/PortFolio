@@ -413,5 +413,75 @@
             "color": "from-green-600 to-emerald-500",
             "bgHover": "hover:bg-green-600/10"
         }
-    ]
+    ],
+    "ui": {
+        "header": {
+            "greeting": "👋 Hola, soy",
+            "name": "Kevin Ocampo",
+            "role": "Fullstack Developer",
+            "description": [
+                "Creo experiencias digitales excepcionales con tecnologías modernas.",
+                "Enfocado en código limpio y soluciones innovadoras."
+            ],
+            "navigation": [
+                {
+                    "label": "Experiencia",
+                    "href": "#experience",
+                    "variant": "primary"
+                },
+                {
+                    "label": "Habilidades",
+                    "href": "#skills",
+                    "variant": "secondary"
+                },
+                {
+                    "label": "Proyectos",
+                    "href": "#projects",
+                    "variant": "outline"
+                },
+                {
+                    "label": "Contacto",
+                    "href": "#contact",
+                    "variant": "outline"
+                }
+            ]
+        },
+        "experience": {
+            "title": [
+                "Mi Trayectoria",
+                "Experiencia Profesional"
+            ],
+            "description": "Un recorrido por mi desarrollo profesional y los proyectos que han marcado mi carrera",
+            "show_less": "Mostrar menos",
+            "show_all": "Ver todas las experiencias"
+        },
+        "skills": {
+            "all_skills": "Todos",
+            "title": [
+                "Mi Stack Tecnológico",
+                "Habilidades & Tecnologías"
+            ],
+            "showed": [
+                "Mostrando",
+                "de",
+                "tecnologías",
+                "tecnología"
+            ],
+            "label": "Ordenadas por nivel de dominio • Las más dominadas primero",
+            "short_label": "Ordenadas por dominio",
+            "filtering": "Filtrando por:",
+            "filter": "Filtradas",
+            "show_less": ["Mostrar menos", "de"],
+            "see_all": ["Ver todas las habilidades", "más"],
+            "not_found": "No se encontraron tecnologías que coincidan con los filtros:",
+            "not_result": "No hay resultados",
+            "see_skills": "Ver todas las tecnologías",
+            "clear": ["Limpiar filtros", "activos", "activo"],
+            "level_label": {
+                "basic": "Básico",
+                "medium": "Intermedio",
+                "advanced": "Avanzado"
+            }
+        }
+    }
 }

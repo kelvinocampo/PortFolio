@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import data from '@/data/data.json';
 
+const uiData = data.ui.experience
+
 const experienceData = data.experience;
 
 // ✅ Simplified with flatMap
@@ -175,7 +177,7 @@ export const Experience = () => {
               ${headerIsVisible ? 'animate-fade-in' : 'opacity-0'}
             `}
           >
-            Mi Trayectoria
+            {uiData.title[0]}
           </p>
           <h2
             className={`
@@ -183,7 +185,7 @@ export const Experience = () => {
               ${headerIsVisible ? 'animate-slide-up' : 'opacity-0'}
             `}
           >
-            Experiencia Profesional
+            {uiData.title[1]}
           </h2>
           <div
             className={`
@@ -197,7 +199,7 @@ export const Experience = () => {
               ${headerIsVisible ? 'animate-slide-up delay-300' : 'opacity-0'}
             `}
           >
-            Un recorrido por mi desarrollo profesional y los proyectos que han marcado mi carrera
+            {uiData.description}
           </p>
         </div>
 
@@ -224,12 +226,12 @@ export const Experience = () => {
             >
               {showAll ? (
                 <>
-                  <span>Mostrar menos</span>
+                  <span>{uiData.show_less}</span>
                   <span className="transform rotate-180">▼</span>
                 </>
               ) : (
                 <>
-                  <span>Ver todas las experiencias ({experienceData.length})</span>
+                  <span>{uiData.show_all} ({experienceData.length})</span>
                   <span>▼</span>
                 </>
               )}

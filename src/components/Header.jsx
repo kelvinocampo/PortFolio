@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 import data from '@/data/data.json';
 
-const navigationItems = [
-  { label: 'Experiencia', href: '#experience', variant: 'primary' },
-  { label: 'Habilidades', href: '#skills', variant: 'secondary' },
-  { label: 'Proyectos', href: '#projects', variant: 'outline' },
-  { label: 'Contacto', href: '#contact', variant: 'outline' }
-];
+const uiData = data.ui.header
+
+const navigationItems = uiData.navigation;
 
 const ICONS = {
   'github': <i className='bx bxl-github'></i>,
@@ -16,25 +13,25 @@ const ICONS = {
 };
 
 const socialLinks = [
-  { 
-    name: data.contact.find(item => item.icon === 'github').name, 
-    href: data.contact.find(item => item.icon === 'github').href, 
-    icon: ICONS.github 
+  {
+    name: data.contact.find(item => item.icon === 'github').name,
+    href: data.contact.find(item => item.icon === 'github').href,
+    icon: ICONS.github
   },
-  { 
-    name: data.contact.find(item => item.icon === 'linkedin').name, 
-    href: data.contact.find(item => item.icon === 'linkedin').href, 
-    icon: ICONS.linkedin 
+  {
+    name: data.contact.find(item => item.icon === 'linkedin').name,
+    href: data.contact.find(item => item.icon === 'linkedin').href,
+    icon: ICONS.linkedin
   },
-  { 
-    name: data.contact.find(item => item.icon === 'gmail').name, 
-    href: data.contact.find(item => item.icon === 'gmail').href, 
-    icon: ICONS.gmail 
+  {
+    name: data.contact.find(item => item.icon === 'gmail').name,
+    href: data.contact.find(item => item.icon === 'gmail').href,
+    icon: ICONS.gmail
   },
-  { 
-    name: data.contact.find(item => item.icon === 'whatsapp').name, 
-    href: data.contact.find(item => item.icon === 'whatsapp').href, 
-    icon: ICONS.whatsapp 
+  {
+    name: data.contact.find(item => item.icon === 'whatsapp').name,
+    href: data.contact.find(item => item.icon === 'whatsapp').href,
+    icon: ICONS.whatsapp
   }
 ];
 
@@ -92,26 +89,26 @@ export const Header = () => {
           {/* Saludo animado */}
           <div className="mb-4 sm:mb-6">
             <p className="text-[#64FFDA] text-base sm:text-lg md:text-xl font-mono tracking-wider animate-fade-in">
-              👋 Hola, soy
+              {uiData.greeting}
             </p>
           </div>
 
           {/* Nombre principal - Muy responsive */}
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tight mb-4 sm:mb-6 animate-slide-up leading-tight">
             <span className="bg-gradient-to-r from-white via-[#E6F1FF] to-[#64FFDA] bg-clip-text text-transparent">
-              Kevin Ocampo
+              {uiData.name}
             </span>
           </h1>
 
           {/* Título y descripción */}
           <div className="mb-6 sm:mb-8 space-y-3 sm:space-y-4">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#8892b0] animate-slide-up delay-200">
-              Fullstack Developer
+              {uiData.role}
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-[#8892b0] max-w-2xl mx-auto leading-relaxed animate-slide-up delay-300 px-2">
-              Creo experiencias digitales excepcionales con tecnologías modernas.
+              {uiData.description[0]}
               <br className="hidden sm:block" />
-              <span className="text-[#64FFDA]">Enfocado en código limpio y soluciones innovadoras.</span>
+              <span className="text-[#64FFDA]">{uiData.description[1]}</span>
             </p>
           </div>
 
