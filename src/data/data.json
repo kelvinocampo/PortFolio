@@ -471,17 +471,39 @@
             "short_label": "Ordenadas por dominio",
             "filtering": "Filtrando por:",
             "filter": "Filtradas",
-            "show_less": ["Mostrar menos", "de"],
-            "see_all": ["Ver todas las habilidades", "más"],
+            "show_less": [
+                "Mostrar menos",
+                "de"
+            ],
+            "see_all": [
+                "Ver todas las habilidades",
+                "más"
+            ],
             "not_found": "No se encontraron tecnologías que coincidan con los filtros:",
             "not_result": "No hay resultados",
             "see_skills": "Ver todas las tecnologías",
-            "clear": ["Limpiar filtros", "activos", "activo"],
+            "clear": [
+                "Limpiar filtros",
+                "activos",
+                "activo"
+            ],
             "level_label": {
                 "basic": "Básico",
                 "medium": "Intermedio",
                 "advanced": "Avanzado"
             }
+        },
+        "projects": {
+            "duration": "Duración: ",
+            "main_feats": "Características principales",
+            "stack": "Stack tecnológico",
+            "code": "Ver Código",
+            "demo": "Ver Demo",
+            "details": "Ver detalles",
+            "projects": "Proyectos Destacados",
+            "description": "Una colección de proyectos que demuestran mis habilidades y experiencia en desarrollo web",
+            "no_projects": "No hay proyectos",
+            "no_projects_category": "No se encontraron proyectos en esta categoría"
         }
     }
 }

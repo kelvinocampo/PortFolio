@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import data from '@/data/data.json';
 
+const uiData = data.ui.projects
+
 const projectsData = data.projects;
 
 const categories = [
@@ -81,7 +83,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         </div>
                         {project.duration && (
                             <div className="text-right text-sm text-gray-400">
-                                <p>Duración: {project.duration}</p>
+                                <p>{uiData.duration} {project.duration}</p>
                             </div>
                         )}
                     </div>
@@ -92,7 +94,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
                     {/* Features */}
                     <div className="mb-8">
-                        <h3 className="text-xl font-semibold text-white mb-4">Características principales</h3>
+                        <h3 className="text-xl font-semibold text-white mb-4">{uiData.main_feats}</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {project.features.map((feature, index) => (
                                 <div key={index} className="flex items-center text-gray-300">
@@ -105,7 +107,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
                     {/* Technologies */}
                     <div className="mb-8">
-                        <h3 className="text-xl font-semibold text-white mb-4">Stack tecnológico</h3>
+                        <h3 className="text-xl font-semibold text-white mb-4">{uiData.stack}</h3>
                         <div className="flex flex-wrap gap-2">
                             {project.technologies.map((tech) => (
                                 <span
@@ -128,7 +130,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                                 className="flex items-center px-6 py-3 bg-[#64FFDA] text-[#0A192F] font-semibold rounded-lg hover:bg-[#00FFCA] transition-colors hover:scale-105 transform"
                             >
                                 <span className="mr-2">📁</span>
-                                Ver Código
+                                {uiData.code}
                             </a>
                         )}
                         {project.liveUrl && (
@@ -139,7 +141,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                                 className="flex items-center px-6 py-3 border-2 border-[#64FFDA] text-[#64FFDA] font-semibold rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition-colors hover:scale-105 transform"
                             >
                                 <span className="mr-2">🚀</span>
-                                Ver Demo
+                                {uiData.demo}
                             </a>
                         )}
                     </div>
@@ -248,7 +250,7 @@ const ProjectCard = ({ project, index, onClick }) => {
                     {/* Footer */}
                     <div className="flex items-center justify-between text-sm text-gray-500">
                         <span>{project.client}</span>
-                        <span className="text-[#64FFDA]">Ver detalles →</span>
+                        <span className="text-[#64FFDA]">{uiData.details} →</span>
                     </div>
                 </div>
             </div>
@@ -297,7 +299,7 @@ export const Projects = () => {
             text-4xl md:text-5xl font-bold text-white mb-4
             ${headerIsVisible ? 'animate-slide-up' : 'opacity-0'}
           `}>
-                        Proyectos Destacados
+                        {uiData.projects}
                     </h2>
                     <div className={`
             w-20 h-1 bg-[#64FFDA] mx-auto rounded-full mb-6
@@ -307,7 +309,7 @@ export const Projects = () => {
             text-lg text-gray-400 max-w-2xl mx-auto
             ${headerIsVisible ? 'animate-slide-up delay-300' : 'opacity-0'}
           `}>
-                        Una colección de proyectos que demuestran mis habilidades y experiencia en desarrollo web
+                        {uiData.description}
                     </p>
                 </div>
 
@@ -353,8 +355,8 @@ export const Projects = () => {
                 {filteredProjects.length === 0 && (
                     <div className="text-center py-16">
                         <span className="text-6xl mb-4 block">🚧</span>
-                        <h3 className="text-2xl font-bold text-white mb-2">No hay proyectos</h3>
-                        <p className="text-gray-400">No se encontraron proyectos en esta categoría</p>
+                        <h3 className="text-2xl font-bold text-white mb-2">{uiData.no_projects}</h3>
+                        <p className="text-gray-400">{uiData.no_projects_category}</p>
                     </div>
                 )}
             </div>
