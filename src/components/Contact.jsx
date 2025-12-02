@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import data from '@/data/data.json';
 
+const uiData = data.ui.contact
+
 const ICONS = {
   'github': <i className='bx bxl-github'></i>,
   'linkedin': <i className='bx bxl-linkedin'></i>,
@@ -138,7 +140,6 @@ const ContactForm = ({ isVisible }) => {
         EMAILJS_PUBLIC_KEY
       );
 
-      console.log('Email enviado exitosamente:', result.text);
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -172,28 +173,28 @@ const ContactForm = ({ isVisible }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="block text-[#64FFDA] font-medium mb-2">
-            Nombre *
+            {uiData.fields.name.label} *
           </label>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            placeholder="Tu nombre completo"
+            placeholder={uiData.fields.name.placeholder}
             className={inputClasses}
             required
           />
         </div>
         <div>
           <label className="block text-[#64FFDA] font-medium mb-2">
-            Email *
+            {uiData.fields.email.label} *
           </label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder="tu.email@ejemplo.com"
+            placeholder={uiData.fields.email.placeholder}
             className={inputClasses}
             required
           />
@@ -203,14 +204,14 @@ const ContactForm = ({ isVisible }) => {
       {/* Asunto */}
       <div>
         <label className="block text-[#64FFDA] font-medium mb-2">
-          Asunto *
+          {uiData.fields.subject.label} *
         </label>
         <input
           type="text"
           name="subject"
           value={formData.subject}
           onChange={handleInputChange}
-          placeholder="¿De qué quieres hablar?"
+          placeholder={uiData.fields.subject.placeholder}
           className={inputClasses}
           required
         />
@@ -219,14 +220,14 @@ const ContactForm = ({ isVisible }) => {
       {/* Mensaje */}
       <div>
         <label className="block text-[#64FFDA] font-medium mb-2">
-          Mensaje *
+          {uiData.fields.message.label} *
         </label>
         <textarea
           name="message"
           rows={6}
           value={formData.message}
           onChange={handleInputChange}
-          placeholder="Cuéntame sobre tu proyecto, idea o simplemente saluda..."
+          placeholder={uiData.fields.message.placeholder}
           className={`${inputClasses} resize-vertical min-h-[120px]`}
           required
         />
@@ -237,7 +238,7 @@ const ContactForm = ({ isVisible }) => {
         <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300 animate-slide-in">
           <div className="flex items-center space-x-2">
             <span>✅</span>
-            <p>¡Mensaje enviado correctamente! Te responderé pronto.</p>
+            <p>{uiData.success}</p>
           </div>
         </div>
       )}
@@ -246,7 +247,7 @@ const ContactForm = ({ isVisible }) => {
         <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 animate-slide-in">
           <div className="flex items-center space-x-2">
             <span>❌</span>
-            <p>Por favor completa todos los campos obligatorios.</p>
+            <p>{uiData.not_success}</p>
           </div>
         </div>
       )}
@@ -255,7 +256,7 @@ const ContactForm = ({ isVisible }) => {
         <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 animate-slide-in">
           <div className="flex items-center space-x-2">
             <span>❌</span>
-            <p>Hubo un error al enviar el mensaje. Por favor intenta nuevamente.</p>
+            <p>{uiData.error}</p>
           </div>
         </div>
       )}
@@ -275,11 +276,11 @@ const ContactForm = ({ isVisible }) => {
         {isSubmitting ? (
           <div className="flex items-center justify-center space-x-2">
             <div className="w-5 h-5 border-2 border-[#0A192F]/30 border-t-[#0A192F] rounded-full animate-spin"></div>
-            <span>Enviando...</span>
+            <span>{uiData.sending}</span>
           </div>
         ) : (
           <div className="flex items-center justify-center space-x-2">
-            <span>Enviar Mensaje</span>
+            <span>{uiData.send}</span>
             <span>🚀</span>
           </div>
         )}
@@ -310,13 +311,13 @@ export const Contact = () => {
             text-[#64FFDA] text-sm uppercase tracking-widest mb-2 font-mono
             ${headerIsVisible ? 'animate-fade-in' : 'opacity-0'}
           `}>
-            Hablemos
+            {uiData.talk}
           </p>
           <h2 className={`
             text-4xl md:text-5xl font-bold text-white mb-4
             ${headerIsVisible ? 'animate-slide-up' : 'opacity-0'}
           `}>
-            Ponte en Contacto
+            {uiData.contact}
           </h2>
           <div className={`
             w-20 h-1 bg-[#64FFDA] mx-auto rounded-full mb-6
@@ -326,9 +327,9 @@ export const Contact = () => {
             text-lg text-gray-400 max-w-2xl mx-auto
             ${headerIsVisible ? 'animate-slide-up delay-300' : 'opacity-0'}
           `}>
-            ¿Tienes un proyecto en mente? ¿Quieres colaborar en algo increíble?
+            {uiData.question}
             <br />
-            <span className="text-[#64FFDA]">¡Me encantaría escuchar de ti!</span>
+            <span className="text-[#64FFDA]">{uiData.hear}</span>
           </p>
         </div>
 
@@ -340,11 +341,10 @@ export const Contact = () => {
             `}>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                 <span className="mr-3">📞</span>
-                Formas de Contacto
+                {uiData.ways}
               </h3>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Elige la forma que más te convenga para conectar conmigo.
-                Respondo rápidamente y siempre estoy abierto a nuevas oportunidades y colaboraciones.
+                {uiData.choose}
               </p>
             </div>
 
@@ -360,13 +360,13 @@ export const Contact = () => {
             </div>
 
             {/* Información adicional */}
-            <div className={`
+            {/* <div className={`
               p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30 backdrop-blur-sm
               ${contentIsVisible ? 'animate-slide-in delay-600' : 'opacity-0'}
             `}>
               <h4 className="text-white font-bold mb-4 flex items-center">
                 <span className="mr-2">⚡</span>
-                Información de Contacto
+                {uiData.info}
               </h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center justify-between">
@@ -391,7 +391,7 @@ export const Contact = () => {
                   <span className="text-[#64FFDA] font-medium">Colombia (GMT-5)</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Formulario de contacto */}
@@ -401,11 +401,10 @@ export const Contact = () => {
             `}>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
                 <span className="mr-3">💬</span>
-                Envíame un Mensaje
+                {uiData.sendme}
               </h3>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Completa el formulario a continuación y te responderé lo antes posible.
-                ¡No dudes en contarme todos los detalles sobre tu proyecto!
+                {uiData.complete}
               </p>
             </div>
 
@@ -420,18 +419,17 @@ export const Contact = () => {
         `}>
           <div className="max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-4">
-              ¿Listo para dar vida a tu proyecto?
+              {uiData.footer.ready}
             </h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Transformemos tus ideas en experiencias digitales excepcionales.
-              Hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos y crear algo increíble juntos.
+              {uiData.footer.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href={contactMethods[0].href}
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-[#64FFDA] to-[#00FFCA] text-[#0A192F] rounded-lg font-semibold hover:shadow-lg hover:shadow-[#64FFDA]/25 hover:scale-105 transition-all duration-300"
               >
-                <span>¡Trabajemos juntos!</span>
+                <span>{uiData.footer.work}</span>
                 <span>🚀</span>
               </a>
               <a
@@ -440,7 +438,7 @@ export const Contact = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-3 px-8 py-4 border-2 border-[#64FFDA] text-[#64FFDA] rounded-lg font-semibold hover:bg-[#64FFDA] hover:text-[#0A192F] hover:shadow-lg hover:shadow-[#64FFDA]/25 transition-all duration-300"
               >
-                <span>Ver mi LinkedIn</span>
+                <span>{uiData.footer.see_linkdin}</span>
                 <span>💼</span>
               </a>
             </div>

@@ -4,6 +4,7 @@ import data from '@/data/data.json';
 const uiData = data.ui.projects
 
 const projectsData = data.projects;
+const projectsStatus = data.projects_status
 
 const categories = [
     { id: 'all', name: 'Todos', icon: '🎯' },
@@ -65,8 +66,8 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     <div className="absolute bottom-4 left-4">
                         <span className={`
               px-3 py-1 rounded-full text-xs font-medium
-              ${project.status === 'Completado' ? 'bg-green-500/20 text-green-300 border border-green-500/30' :
-                                project.status === 'En Progreso' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30' :
+              ${project.status === projectsStatus.completed.type ? 'bg-green-500/20 text-green-300 border border-green-500/30' :
+                                project.status === projectsStatus.working.type ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30' :
                                     'bg-blue-500/20 text-blue-300 border border-blue-500/30'}
             `}>
                             {project.status}
@@ -178,12 +179,12 @@ const ProjectCard = ({ project, index, onClick }) => {
                     <div className="absolute top-4 left-4">
                         <span className={`
               px-2 py-1 rounded-full text-xs font-medium backdrop-blur-sm
-              ${project.status === 'Completado' ? 'bg-green-500/20 text-green-300 border border-green-500/50' :
-                                project.status === 'En Progreso' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/50' :
+              ${project.status === projectsStatus.completed.type ? 'bg-green-500/20 text-green-300 border border-green-500/50' :
+                                project.status === projectsStatus.working.type ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/50' :
                                     'bg-blue-500/20 text-blue-300 border border-blue-500/50'}
             `}>
-                            {project.status === 'Completado' ? '✅ Completado' :
-                                project.status === 'En Progreso' ? '🚧 En desarrollo' : '📋 Planeado'}
+                            {project.status === projectsStatus.completed.type ? projectsStatus.completed.label :
+                                project.status === projectsStatus.working.type ? projectsStatus.working.label : projectsStatus.planned.label}
                         </span>
                     </div>
 
