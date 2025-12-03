@@ -1,11 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import data from '@/data/data.json';
+import { useDataJson } from '../helpers/useDataJSON';
 
-const uiData = data.ui.projects
-
-const projectsData = data.projects;
-const projectsStatus = data.projects_status
-
+let projectsStatus
+let uiData
 const categories = [
     { id: 'all', name: 'Todos', icon: '🎯' },
     { id: 'fullstack', name: 'Full Stack', icon: '🚀' },
@@ -260,6 +257,11 @@ const ProjectCard = ({ project, index, onClick }) => {
 };
 
 export const Projects = () => {
+    const data = useDataJson();
+    const projectsData = data.projects;
+    uiData = data.ui.projects
+    projectsStatus = data.projects_status
+
     const [activeCategory, setActiveCategory] = useState('all');
     const [selectedProject, setSelectedProject] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);

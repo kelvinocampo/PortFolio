@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react';
-import data from '@/data/data.json';
-
-const uiData = data.ui.header
-
-const navigationItems = uiData.navigation;
+import { useDataJson } from '../helpers/useDataJSON';
 
 const ICONS = {
   'github': <i className='bx bxl-github'></i>,
@@ -12,30 +8,33 @@ const ICONS = {
   'whatsapp': <i className='bx bxl-whatsapp'></i>,
 };
 
-const socialLinks = [
-  {
-    name: data.contact.find(item => item.icon === 'github').name,
-    href: data.contact.find(item => item.icon === 'github').href,
-    icon: ICONS.github
-  },
-  {
-    name: data.contact.find(item => item.icon === 'linkedin').name,
-    href: data.contact.find(item => item.icon === 'linkedin').href,
-    icon: ICONS.linkedin
-  },
-  {
-    name: data.contact.find(item => item.icon === 'gmail').name,
-    href: data.contact.find(item => item.icon === 'gmail').href,
-    icon: ICONS.gmail
-  },
-  {
-    name: data.contact.find(item => item.icon === 'whatsapp').name,
-    href: data.contact.find(item => item.icon === 'whatsapp').href,
-    icon: ICONS.whatsapp
-  }
-];
-
 export const Header = () => {
+  const data = useDataJson();
+  const uiData = data.ui.header;
+  const navigationItems = uiData.navigation;
+  const socialLinks = [
+    {
+      name: data.contact.find(item => item.icon === 'github').name,
+      href: data.contact.find(item => item.icon === 'github').href,
+      icon: ICONS.github
+    },
+    {
+      name: data.contact.find(item => item.icon === 'linkedin').name,
+      href: data.contact.find(item => item.icon === 'linkedin').href,
+      icon: ICONS.linkedin
+    },
+    {
+      name: data.contact.find(item => item.icon === 'gmail').name,
+      href: data.contact.find(item => item.icon === 'gmail').href,
+      icon: ICONS.gmail
+    },
+    {
+      name: data.contact.find(item => item.icon === 'whatsapp').name,
+      href: data.contact.find(item => item.icon === 'whatsapp').href,
+      icon: ICONS.whatsapp
+    }
+  ];
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

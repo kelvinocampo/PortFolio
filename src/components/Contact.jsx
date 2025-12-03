@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import data from '@/data/data.json';
+import { useDataJson } from '../helpers/useDataJSON';
 
-const uiData = data.ui.contact
+let uiData
 
 const ICONS = {
   'github': <i className='bx bxl-github'></i>,
@@ -37,7 +37,6 @@ const useIntersectionObserver = (options = {}) => {
   return [ref, isIntersecting];
 };
 
-const contactMethods = data.contact;
 
 const ContactCard = ({ method, index, isVisible }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -290,6 +289,11 @@ const ContactForm = ({ isVisible }) => {
 };
 
 export const Contact = () => {
+  const data = useDataJson();
+  uiData = data.ui.contact
+  const contactMethods = data.contact;
+
+
   const [headerRef, headerIsVisible] = useIntersectionObserver();
   const [contentRef, contentIsVisible] = useIntersectionObserver();
 

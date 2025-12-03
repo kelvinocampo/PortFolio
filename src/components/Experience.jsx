@@ -1,16 +1,10 @@
 import { useState, useEffect } from 'react';
-import data from '@/data/data.json';
-
-const uiData = data.ui.experience
-
-const experienceData = data.experience;
+import { useDataJson } from '@/helpers/useDataJSON';
 
 // ✅ Simplified with flatMap
 function countTechnologies(experience) {
   return new Set(experience.flatMap(job => job.technologies)).size;
 }
-
-const usedTechnologies = countTechnologies(experienceData);
 
 // ✅ Custom hook with dependencies
 const useIntersectionObserver = (options = {}) => {
@@ -152,6 +146,11 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
 };
 
 export const Experience = () => {
+  const data = useDataJson();
+  const uiData = data.ui.experience
+  const experienceData = data.experience;
+  const usedTechnologies = countTechnologies(experienceData);
+  
   const { ref: headerRef, isIntersecting: headerIsVisible } = useIntersectionObserver();
   const { ref: timelineRef, isIntersecting: timelineIsVisible } = useIntersectionObserver();
   const { ref: statsRef, isIntersecting: statsIsVisible } = useIntersectionObserver();

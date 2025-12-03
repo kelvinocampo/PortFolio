@@ -1,10 +1,6 @@
 // Skills.jsx
 import { useState, useEffect } from "react";
-import data from "@/data/data.json";
-
-const uiData = data.ui.skills
-
-const skillsData = data.skills;
+import { useDataJson } from "../helpers/useDataJSON";
 
 const categoryColors = {
   Frontend: "bg-blue-500/20 text-blue-300",
@@ -137,6 +133,9 @@ const SkillCard = ({ skill, index }) => {
 };
 
 export const Skills = () => {
+  const data = useDataJson();
+  const uiData = data.ui.skills
+  const skillsData = data.skills;
 
   const [selectedCategories, setSelectedCategories] = useState([uiData.all_skills]);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
