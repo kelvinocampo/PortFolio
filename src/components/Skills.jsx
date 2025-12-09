@@ -154,6 +154,11 @@ export const Skills = () => {
     };
   }, []);
 
+  // Actualizar categorías seleccionadas cuando cambia el idioma
+  useEffect(() => {
+    setSelectedCategories([uiData.all_skills]);
+  }, [uiData.all_skills]);
+
   // Obtener todas las categorías únicas de todas las skills
   const getAllCategories = () => {
     const categorySet = new Set();
@@ -247,8 +252,8 @@ export const Skills = () => {
       <div className="max-w-6xl w-full">
         {/* Encabezado */}
         <div className={`text-center mb-10 transform transition-all duration-700 ${isHeaderVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-4'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 -translate-y-4'
           }`}>
           <p className="text-[#64ffda] text-sm uppercase tracking-widest mb-2 font-mono">
             {uiData.title[0]}
@@ -261,8 +266,8 @@ export const Skills = () => {
 
         {/* Filtros de categorías */}
         <div className={`flex justify-center gap-3 mb-8 flex-wrap transform transition-all duration-700 ${areFiltersVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-4'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-4'
           }`}>
           {categories.map((category, index) => (
             <button
@@ -291,8 +296,8 @@ export const Skills = () => {
 
         {/* Información de filtros activos */}
         <div className={`text-center mb-8 transform transition-all duration-500 ${areFiltersVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-2'
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-2'
           }`} style={{ transitionDelay: '1000ms' }}>
           {selectedCategories.includes(uiData.all_skills) ? (
             <div className="text-sm">
@@ -388,8 +393,8 @@ export const Skills = () => {
             <div
               key={stat.label}
               className={`p-6 bg-[#112240]/50 rounded-xl border border-gray-700/30 transform transition-all duration-700 ${areFiltersVisible
-                  ? 'opacity-100 translate-y-0 scale-100'
-                  : 'opacity-0 translate-y-8 scale-95'
+                ? 'opacity-100 translate-y-0 scale-100'
+                : 'opacity-0 translate-y-8 scale-95'
                 }`}
               style={{
                 transitionDelay: `${1200 + index * 100}ms`
@@ -406,8 +411,8 @@ export const Skills = () => {
         {/* Botón para limpiar filtros */}
         {!selectedCategories.includes(uiData.all_skills) && (
           <div className={`text-center mt-8 transform transition-all duration-500 ${areFiltersVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-4'
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-4'
             }`} style={{ transitionDelay: '1600ms' }}>
             <button
               onClick={() => setSelectedCategories([uiData.all_skills])}
