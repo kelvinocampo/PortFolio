@@ -3,12 +3,6 @@ import { useDataJson } from '../helpers/useDataJSON';
 
 let projectsStatus
 let uiData
-const categories = [
-    { id: 'all', name: 'Todos', icon: '🎯' },
-    { id: 'fullstack', name: 'Full Stack', icon: '🚀' },
-    { id: 'frontend', name: 'Frontend', icon: '🎨' },
-    { id: 'backend', name: 'Backend', icon: '⚙️' }
-];
 
 const useIntersectionObserver = (options = {}) => {
     const [isIntersecting, setIsIntersecting] = useState(false);
@@ -260,6 +254,7 @@ export const Projects = () => {
     const data = useDataJson();
     const projectsData = data.projects;
     uiData = data.ui.projects
+    const categories = uiData.categories
     projectsStatus = data.projects_status
 
     const [activeCategory, setActiveCategory] = useState('all');

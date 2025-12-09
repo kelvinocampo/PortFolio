@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDataJson } from '@/helpers/useDataJSON';
 
+let uiData
 // ✅ Simplified with flatMap
 function countTechnologies(experience) {
   return new Set(experience.flatMap(job => job.technologies)).size;
@@ -110,7 +111,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
               className="cursor-pointer flex items-center text-[#64FFDA] hover:text-white transition-colors font-medium"
             >
               <span className="mr-2">{isExpanded ? '📖' : '🏆'}</span>
-              {isExpanded ? 'Ocultar logros' : 'Ver logros'}
+              {isExpanded ? uiData.hide_achievements : uiData.view_achievements}
               <span
                 className={`ml-2 transform transition-transform ${isExpanded ? 'rotate-180' : ''
                   }`}
@@ -147,7 +148,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
 
 export const Experience = () => {
   const data = useDataJson();
-  const uiData = data.ui.experience
+  uiData = data.ui.experience
   const experienceData = data.experience;
   const usedTechnologies = countTechnologies(experienceData);
   

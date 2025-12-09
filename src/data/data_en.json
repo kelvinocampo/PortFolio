@@ -2,30 +2,30 @@
     "info": [
         {
             "value": "6",
-            "label": "Meses de experiencia"
+            "label": "Months of experience"
         },
         {
             "value": "+10",
-            "label": "Proyectos completados"
+            "label": "Completed projects"
         },
         {
             "value": "1",
-            "label": "Empresas"
+            "label": "Companies"
         }
     ],
     "experience": [
         {
             "id": 1,
             "company": "Hackathon Odoo-Clion SENA",
-            "position": "Desarrollador de Vistas y Modelos",
-            "period": "Abril 2025 - 24 horas",
+            "position": "Views and Models Developer",
+            "period": "April 2025 - 24 hours",
             "location": "Armenia, Quindío, Colombia",
             "type": "Hackathon",
-            "description": "Implementación de un Sistema Integral de Gestión Clínica (HIS) sobre la plataforma Odoo 18, diseñado para digitalizar y optimizar el flujo completo de atención médica, desde el ingreso del paciente hasta el alta. El sistema centraliza la Historia Clínica Digital y asegura la trazabilidad de todos los procedimientos.",
+            "description": "Implementation of a Comprehensive Clinical Management System (HIS) on the Odoo 18 platform, designed to digitize and optimize the complete healthcare flow, from patient admission to discharge. The system centralizes the Digital Medical Record and ensures traceability of all procedures.",
             "achievements": [
-                "Desarrollo de módulos clave (Pacientes, Prescripciones, Procedimientos y Historia Clínica Digital) para la gestión unificada de atenciones.",
-                "Implementación de funcionalidades como alertas de alergias en la ficha médica y programación de intervenciones con listas de chequeo.",
-                "Integración de la gestión clínica con módulos estándar de Odoo (CRM y Facturación) para un control administrativo completo."
+                "Development of key modules (Patients, Prescriptions, Procedures, and Digital Medical Record) for unified care management.",
+                "Implementation of features such as allergy alerts in the medical record and scheduling of interventions with checklists.",
+                "Integration of clinical management with standard Odoo modules (CRM and Billing) for complete administrative control."
             ],
             "technologies": [
                 "Odoo 18",
@@ -37,15 +37,15 @@
         },
         {
             "id": 2,
-            "company": "Bootcamp Analisis de datos Explorador Talento Tech",
-            "position": "Estudiante - Desarrollador",
-            "period": "Agosto 2025 - Octubre 17 2025",
+            "company": "Data Analysis Bootcamp Explorador Talento Tech",
+            "position": "Student - Developer",
+            "period": "August 2025 - October 17, 2025",
             "location": "Armenia, Quindío, Colombia",
             "type": "Bootcamp",
-            "description": "Participación en un bootcamp enfocado en el análisis de datos exploratorio relacionados con la adopción y el mercado de vehículos eléctricos (VE) en Colombia.",
+            "description": "Participation in a bootcamp focused on exploratory data analysis related to the adoption and market of electric vehicles (EV) in Colombia.",
             "achievements": [
-                "Limpieza, transformación y visualización de datasets reales sobre el registro, consumo y distribución de VE en el país, utilizando Python y librerías como Pandas y Matplotlib.",
-                "Realización de un Análisis Exploratorio y Comparativo Regional para el mercado de vehículos eléctricos, contrastando los datos de Colombia con los de otros países clave de Latinoamérica y México."
+                "Cleaning, transformation, and visualization of real datasets on the registration, consumption, and distribution of EVs in the country, using Python and libraries such as Pandas and Matplotlib.",
+                "Conducting an Exploratory and Regional Comparative Analysis for the electric vehicle market, contrasting Colombia's data with that of other key Latin American countries and Mexico."
             ],
             "technologies": [
                 "Python",
@@ -60,14 +60,14 @@
         {
             "id": 3,
             "company": "IBG (Iván Botero Gómez)",
-            "position": "Aprendiz",
-            "period": "Julio 2025 - Presente",
+            "position": "Apprentice",
+            "period": "July 2025 - Present",
             "location": "Armenia, Quindío, Colombia",
-            "type": "Tiempo Completo",
-            "description": "Desarrollo y migración de funcionalidades en diferentes aplicaciones internas de la empresa.",
+            "type": "Full Time",
+            "description": "Development and migration of functionalities in different internal company applications.",
             "achievements": [
-                "Migración de más de 10 aplicaciones a nuevas versiones de motor de base de datos y PHP.",
-                "Desarrollo de aplicativo para la gestión de inmuebles contando con más de 5 módulos funcionales."
+                "Migration of more than 10 applications to new database engine and PHP versions.",
+                "Development of a real estate management application with more than 5 functional modules."
             ],
             "technologies": [
                 "PHP",
@@ -85,12 +85,12 @@
     "skills": [
         {
             "name": "JavaScript",
-            "level": "Avanzado",
+            "level": "Advanced",
             "category": "Frontend"
         },
         {
             "name": "TypeScript",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "categories": [
                 "Frontend",
                 "Backend"
@@ -98,167 +98,167 @@
         },
         {
             "name": "Node.js",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Backend"
         },
         {
             "name": "Java",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Backend"
         },
         {
             "name": "C#",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Backend"
         },
         {
             "name": "PHP",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Backend"
         },
         {
             "name": "Python",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Backend"
         },
         {
             "name": "React",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Frontend"
         },
         {
             "name": "Express.js",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Backend"
         },
         {
             "name": "Flutter",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Frontend"
         },
         {
             "name": "TailwindCSS",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Styling"
         },
         {
             "name": "Bootstrap",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Styling"
         },
         {
             "name": "Odoo",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Backend"
         },
         {
             "name": "MySQL",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Database"
         },
         {
             "name": "SQLite",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Database"
         },
         {
             "name": "MongoDB",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Database"
         },
         {
             "name": "SQL Server",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Database"
         },
         {
             "name": "Informix",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Database"
         },
         {
             "name": "Jest",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Testing"
         },
         {
             "name": "npm",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Tools"
         },
         {
             "name": "VS Code",
-            "level": "Avanzado",
+            "level": "Advanced",
             "category": "Tools"
         },
         {
             "name": "Visual Studio",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Tools"
         },
         {
             "name": "Figma",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Design"
         },
         {
             "name": "Canva",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Design"
         },
         {
             "name": "Netlify",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Deployment"
         },
         {
             "name": "Render",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Deployment"
         },
         {
             "name": "GitHub",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Version Control"
         },
         {
             "name": "Vercel",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Deployment"
         },
         {
             "name": "Azure",
-            "level": "Basico",
+            "level": "Basic",
             "category": "Deployment"
         },
         {
             "name": "Railway",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Deployment"
         },
         {
             "name": "Notion",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Project Management"
         },
         {
             "name": "Trello",
-            "level": "Intermedio",
+            "level": "Intermediate",
             "category": "Project Management"
         }
     ],
     "projects_status": {
         "completed": {
-            "type": "Completado",
-            "label": "✅ Completado"
+            "type": "Completed",
+            "label": "✅ Completed"
         },
         "working": {
-            "type": "En Progreso",
-            "label": "🚧 En desarrollo"
+            "type": "In Progress",
+            "label": "🚧 In development"
         },
         "planned": {
-            "type": "Planeado",
-            "label": "📋 Planeado"
+            "type": "Planned",
+            "label": "📋 Planned"
         }
     },
     "projects": [
@@ -266,8 +266,8 @@
             "id": 1,
             "title": "Senagrol",
             "category": "fullstack",
-            "description": "SENAGROL conecta agricultores con consumidores, optimizando la rentabilidad y mejorando la comercialización de sus cultivos.",
-            "longDescription": "Plataforma creada para facilitar que los agricultores lleguen directamente a los consumidores finales, asegurando la rentabilidad de sus cultivos. La aplicación aborda problemas críticos del sector, como el acceso limitado a mercados, la falta de visibilidad de los productos y la descoordinación entre producción y demanda, ofreciendo soluciones tecnológicas eficientes para mejorar la comercialización agrícola.",
+            "description": "SENAGROL connects farmers with consumers, optimizing profitability and improving the marketing of their crops.",
+            "longDescription": "Platform created to facilitate farmers reaching end consumers directly, ensuring the profitability of their crops. The application addresses critical sector problems, such as limited market access, lack of product visibility, and lack of coordination between production and demand, offering efficient technological solutions to improve agricultural marketing.",
             "image": "/assets/images/senagrol.webp",
             "technologies": [
                 "React",
@@ -278,24 +278,24 @@
                 "Express"
             ],
             "features": [
-                "Chat en tiempo real",
-                "Panel de administración completo",
-                "Seguimiento del transporte de productos",
-                "Gestión de transporte mediante los mismos usuarios"
+                "Real-time chat",
+                "Complete administration panel",
+                "Product transport tracking",
+                "Transport management through the users themselves"
             ],
             "githubUrl": "https://github.com/kelvinocampo/SENAGROL_Client",
             "liveUrl": "https://senagrol.vercel.app/",
-            "status": "Completado",
+            "status": "Completed",
             "year": "2025",
             "client": "SENA",
-            "duration": "4 meses"
+            "duration": "4 months"
         },
         {
             "id": 2,
             "title": "Tesoros de la India",
             "category": "backend",
-            "description": "Plataforma web de turismo rural en Colombia que conecta a emprendedores locales con visitantes, ofreciendo experiencias y productos únicos.",
-            "longDescription": "Tesoros de la India es una plataforma de comercio electrónico enfocada en el turismo rural en Colombia. Permite a los emprendedores locales exhibir y vender sus productos, así como experiencias turísticas auténticas. La aplicación integra un asistente inteligente que ofrece recomendaciones personalizadas según el comportamiento y retroalimentación de los usuarios. Construida con tecnologías modernas como React, TypeScript, Vite y TailwindCSS, garantiza una experiencia rápida, segura e intuitiva para usuarios y emprendedores.",
+            "description": "Rural tourism web platform in Colombia that connects local entrepreneurs with visitors, offering unique experiences and products.",
+            "longDescription": "Tesoros de la India is an e-commerce platform focused on rural tourism in Colombia. It allows local entrepreneurs to showcase and sell their products, as well as authentic tourist experiences. The application integrates an intelligent assistant that offers personalized recommendations based on user behavior and feedback. Built with modern technologies like React, TypeScript, Vite, and TailwindCSS, it ensures a fast, secure, and intuitive experience for users and entrepreneurs.",
             "image": "https://tesoros-india.vercel.app/images/FondoDesktop.webp",
             "technologies": [
                 "React",
@@ -308,27 +308,27 @@
                 "Mercado Pago"
             ],
             "features": [
-                "Mapa interactivo para explorar experiencias rurales",
-                "Asistente inteligente con IA para recomendaciones personalizadas",
-                "Gestión de productos y paquetes por parte de emprendedores",
-                "Sistema de reseñas y calificaciones de experiencias",
-                "Reportes de ventas semanales para emprendedores",
-                "Login seguro y perfiles personalizados",
-                "Diseño responsive con UI/UX moderna"
+                "Interactive map to explore rural experiences",
+                "AI-powered intelligent assistant for personalized recommendations",
+                "Product and package management by entrepreneurs",
+                "Experience review and rating system",
+                "Weekly sales reports for entrepreneurs",
+                "Secure login and personalized profiles",
+                "Responsive design with modern UI/UX"
             ],
             "githubUrl": "https://github.com/davidar27/FrontedTesorosIndia",
             "liveUrl": "https://tesoros-india.vercel.app/",
-            "status": "Completado",
+            "status": "Completed",
             "year": "2025",
             "client": "SENA",
-            "duration": "4 meses"
+            "duration": "4 months"
         },
         {
             "id": 3,
             "title": "Temporal Realtime Chat",
             "category": "frontend",
-            "description": "Una aplicación web de chat grupal y privado que permite la comunicación instantánea y el envío de mensajes de texto, imágenes y grabaciones de audio.",
-            "longDescription": "Desarrollo completo de una plataforma de chat en tiempo real que utiliza WebSockets (Socket.IO) para manejar la comunicación bidireccional entre múltiples clientes. La aplicación soporta salas de chat dinámicas y ofrece una experiencia multimedia completa, permitiendo a los usuarios enviar texto, imágenes (codificadas en Base64) y grabaciones de audio (usando la API MediaRecorder del navegador). La interfaz fue construida con Next.js y estilizada con Tailwind CSS para garantizar un diseño moderno y eficiente.",
+            "description": "A group and private chat web application that allows instant communication and sending of text messages, images, and audio recordings.",
+            "longDescription": "Complete development of a real-time chat platform that uses WebSockets (Socket.IO) to handle bidirectional communication between multiple clients. The application supports dynamic chat rooms and offers a complete multimedia experience, allowing users to send text, images (encoded in Base64), and audio recordings (using the browser's MediaRecorder API). The interface was built with Next.js and styled with Tailwind CSS to ensure a modern and efficient design.",
             "image": "/assets/images/realtime-chat.png",
             "technologies": [
                 "Next JS",
@@ -340,15 +340,15 @@
                 "MediaRecorder API"
             ],
             "features": [
-                "Comunicación bidireccional instantánea (WebSockets)",
-                "Soporte para salas de chat dinámicas (Room IDs)",
-                "Envío de texto, imágenes (Base64) y audio (Blob/Base64)",
-                "Funcionalidad de grabación de audio integrada (MediaRecorder)",
-                "Vista previa y gestión de archivos multimedia antes de enviar"
+                "Instant bidirectional communication (WebSockets)",
+                "Support for dynamic chat rooms (Room IDs)",
+                "Sending text, images (Base64), and audio (Blob/Base64)",
+                "Integrated audio recording functionality (MediaRecorder)",
+                "Preview and management of multimedia files before sending"
             ],
             "githubUrl": "https://github.com/kelvinocampo/realtime-chat",
             "liveUrl": "https://realtime-temporal-chat.vercel.app/",
-            "status": "Completado",
+            "status": "Completed",
             "year": "2025",
             "client": "Personal"
         },
@@ -356,8 +356,8 @@
             "id": 4,
             "title": "Gemini Key Manager Chat",
             "category": "fullstack",
-            "description": "Aplicación móvil Flutter que centraliza la gestión de claves API de Gemini con un cliente de chat integrado impulsado por IA.",
-            "longDescription": "Aplicación móvil desarrollada en Flutter que permite gestionar de forma segura hasta 10 API Keys de Gemini AI, con un sistema de chat integrado que utiliza el modelo Gemini 2.5 Flash. La aplicación ofrece almacenamiento local seguro mediante SQLite, soporte multiidioma (Español/Inglés), temas claro y oscuro, y la capacidad de cambiar entre diferentes claves API en tiempo real. Diseñada con arquitectura Provider para gestión de estado eficiente y una experiencia de usuario fluida.",
+            "description": "Flutter mobile application that centralizes the management of Gemini API keys with an integrated AI-powered chat client.",
+            "longDescription": "Mobile application developed in Flutter that allows secure management of up to 10 Gemini AI API Keys, with an integrated chat system that uses the Gemini 2.5 Flash model. The application offers secure local storage through SQLite, multilingual support (Spanish/English), light and dark themes, and the ability to switch between different API keys in real time. Designed with Provider architecture for efficient state management and a smooth user experience.",
             "image": "/assets/images/flutter-ia.png",
             "technologies": [
                 "Flutter",
@@ -369,21 +369,21 @@
                 "Flutter Localizations"
             ],
             "features": [
-                "Gestión segura de hasta 10 API Keys de Gemini",
-                "Chat integrado con modelo Gemini 2.5 Flash",
-                "Almacenamiento local seguro con SQLite",
-                "Soporte multiidioma (Español e Inglés)",
-                "Temas claro y oscuro personalizables",
-                "Cambio de clave activa en tiempo real",
-                "Interfaz intuitiva y moderna",
-                "Privacidad total - datos almacenados localmente"
+                "Secure management of up to 10 Gemini API Keys",
+                "Integrated chat with Gemini 2.5 Flash model",
+                "Secure local storage with SQLite",
+                "Multilingual support (Spanish and English)",
+                "Customizable light and dark themes",
+                "Real-time active key switching",
+                "Intuitive and modern interface",
+                "Total privacy - data stored locally"
             ],
             "githubUrl": "https://github.com/kelvinocampo/Flutter_IA",
             "liveUrl": "https://github.com/kelvinocampo/Flutter_IA/releases",
-            "status": "Completado",
+            "status": "Completed",
             "year": "2025",
             "client": "Personal",
-            "duration": "2 meses"
+            "duration": "2 months"
         }
     ],
     "contact": [
@@ -393,7 +393,7 @@
             "value": "kevinocampooso@gmail.com",
             "href": "mailto:kevinocampooso@gmail.com",
             "icon": "gmail",
-            "description": "Envíame un correo",
+            "description": "Send me an email",
             "color": "from-red-600 to-orange-500",
             "bgHover": "hover:bg-red-500/10"
         },
@@ -403,7 +403,7 @@
             "value": "/in/kevin-ocampo-osorio-4013202a4",
             "href": "https://www.linkedin.com/in/kevin-ocampo-osorio-4013202a4/",
             "icon": "linkedin",
-            "description": "Conectemos",
+            "description": "Let's connect",
             "color": "from-blue-700 to-blue-500",
             "bgHover": "hover:bg-blue-600/10"
         },
@@ -413,7 +413,7 @@
             "value": "@kelvinocampo",
             "href": "https://github.com/kelvinocampo",
             "icon": "github",
-            "description": "Mi código",
+            "description": "My code",
             "color": "from-purple-600 to-fuchsia-500",
             "bgHover": "hover:bg-purple-600/10"
         },
@@ -423,38 +423,38 @@
             "value": "+57 300 894 8783",
             "href": "https://wa.me/573008948783",
             "icon": "whatsapp",
-            "description": "Chat directo",
+            "description": "Direct chat",
             "color": "from-green-600 to-emerald-500",
             "bgHover": "hover:bg-green-600/10"
         }
     ],
     "ui": {
         "header": {
-            "greeting": "👋 Hola, soy",
+            "greeting": "👋 Hi, I'm",
             "name": "Kevin Ocampo",
             "role": "Fullstack Developer",
             "description": [
-                "Creo experiencias digitales excepcionales con tecnologías modernas.",
-                "Enfocado en código limpio y soluciones innovadoras."
+                "I create exceptional digital experiences with modern technologies.",
+                "Focused on clean code and innovative solutions."
             ],
             "navigation": [
                 {
-                    "label": "Experiencia",
+                    "label": "Experience",
                     "href": "#experience",
                     "variant": "primary"
                 },
                 {
-                    "label": "Habilidades",
+                    "label": "Skills",
                     "href": "#skills",
                     "variant": "secondary"
                 },
                 {
-                    "label": "Proyectos",
+                    "label": "Projects",
                     "href": "#projects",
                     "variant": "outline"
                 },
                 {
-                    "label": "Contacto",
+                    "label": "Contact",
                     "href": "#contact",
                     "variant": "outline"
                 }
@@ -462,100 +462,124 @@
         },
         "experience": {
             "title": [
-                "Mi Trayectoria",
-                "Experiencia Profesional"
+                "My Journey",
+                "Professional Experience"
             ],
-            "description": "Un recorrido por mi desarrollo profesional y los proyectos que han marcado mi carrera",
-            "show_less": "Mostrar menos",
-            "show_all": "Ver todas las experiencias"
+            "description": "A journey through my professional development and the projects that have marked my career",
+            "show_less": "Show less",
+            "show_all": "View all experiences",
+            "view_achievements": "View achievements",
+            "hide_achievements": "Hide achievements"
         },
         "skills": {
-            "all_skills": "Todos",
+            "all_skills": "All",
             "title": [
-                "Mi Stack Tecnológico",
-                "Habilidades & Tecnologías"
+                "My Tech Stack",
+                "Skills & Technologies"
             ],
             "showed": [
-                "Mostrando",
-                "de",
-                "tecnologías",
-                "tecnología"
+                "Showing",
+                "of",
+                "technologies",
+                "technology"
             ],
-            "label": "Ordenadas por nivel de dominio • Las más dominadas primero",
-            "short_label": "Ordenadas por dominio",
-            "filtering": "Filtrando por:",
-            "filter": "Filtradas",
+            "label": "Sorted by proficiency level • Most proficient first",
+            "short_label": "Sorted by proficiency",
+            "filtering": "Filtering by:",
+            "filter": "Filtered",
             "show_less": [
-                "Mostrar menos",
-                "de"
+                "Show less",
+                "of"
             ],
             "see_all": [
-                "Ver todas las habilidades",
-                "más"
+                "View all skills",
+                "more"
             ],
-            "not_found": "No se encontraron tecnologías que coincidan con los filtros:",
-            "not_result": "No hay resultados",
-            "see_skills": "Ver todas las tecnologías",
+            "not_found": "No technologies found matching the filters:",
+            "not_result": "No results",
+            "see_skills": "View all technologies",
             "clear": [
-                "Limpiar filtros",
-                "activos",
-                "activo"
+                "Clear filters",
+                "active",
+                "active"
             ],
             "level_label": {
-                "basic": "Básico",
-                "medium": "Intermedio",
-                "advanced": "Avanzado"
+                "basic": "Basic",
+                "medium": "Intermediate",
+                "advanced": "Advanced"
             }
         },
         "projects": {
-            "duration": "Duración: ",
-            "main_feats": "Características principales",
-            "stack": "Stack tecnológico",
-            "code": "Ver Código",
-            "demo": "Ver Demo",
-            "details": "Ver detalles",
-            "projects": "Proyectos Destacados",
-            "description": "Una colección de proyectos que demuestran mis habilidades y experiencia en desarrollo web",
-            "no_projects": "No hay proyectos",
-            "no_projects_category": "No se encontraron proyectos en esta categoría"
+            "duration": "Duration: ",
+            "main_feats": "Main features",
+            "stack": "Tech stack",
+            "code": "View Code",
+            "demo": "View Demo",
+            "details": "View details",
+            "projects": "Featured Projects",
+            "description": "A collection of projects that demonstrate my skills and experience in web development",
+            "no_projects": "No projects",
+            "no_projects_category": "No projects found in this category",
+            "categories": [
+                {
+                    "id": "all",
+                    "name": "All",
+                    "icon": "🎯"
+                },
+                {
+                    "id": "fullstack",
+                    "name": "Full Stack",
+                    "icon": "🚀"
+                },
+                {
+                    "id": "frontend",
+                    "name": "Frontend",
+                    "icon": "🎨"
+                },
+                {
+                    "id": "backend",
+                    "name": "Backend",
+                    "icon": "⚙️"
+                }
+            ]
         },
         "contact": {
             "fields": {
                 "name": {
-                    "label": "Nombre",
-                    "placeholder": "Tu nombre completo"
+                    "label": "Name",
+                    "placeholder": "Your full name"
                 },
                 "email": {
                     "label": "Email",
-                    "placeholder": "tu.email@ejemplo.com"
+                    "placeholder": "your.email@example.com"
                 },
                 "subject": {
-                    "label": "Asunto",
-                    "placeholder": "¿De qué quieres hablar?"
+                    "label": "Subject",
+                    "placeholder": "What do you want to talk about?"
                 },
                 "message": {
-                    "label": "Mensaje",
-                    "placeholder": "Cuéntame sobre tu proyecto, idea o simplemente saluda..."
+                    "label": "Message",
+                    "placeholder": "Tell me about your project, idea, or just say hello..."
                 }
             },
-            "success": "¡Mensaje enviado correctamente! Te responderé pronto.",
-            "not_success": "Por favor completa todos los campos obligatorios.",
-            "error": "Hubo un error al enviar el mensaje. Por favor intenta nuevamente.",
-            "sending": "Enviando...",
-            "send": "Enviar Mensaje",
-            "talk": "Hablemos",
-            "contact": "Ponte en Contacto",
-            "question": "¿Tienes un proyecto en mente? ¿Quieres colaborar en algo increíble?",
-            "hear": "¡Me encantaría escuchar de ti!",
-            "ways": "Formas de Contacto",
-            "choose": "Elige la forma que más te convenga para conectar conmigo. Respondo rápidamente y siempre estoy abierto a nuevas oportunidades y colaboraciones.",
-            "sendme": "Envíame un Mensaje",
-            "complete": "Completa el formulario a continuación y te responderé lo antes posible. ¡No dudes en contarme todos los detalles sobre tu proyecto!",
+            "success": "Message sent successfully! I'll get back to you soon.",
+            "not_success": "Please complete all required fields.",
+            "error": "There was an error sending the message. Please try again.",
+            "sending": "Sending...",
+            "send": "Send Message",
+            "talk": "Let's Talk",
+            "contact": "Get in Touch",
+            "question": "Do you have a project in mind? Want to collaborate on something amazing?",
+            "hear": "I'd love to hear from you!",
+            "ways": "Contact Methods",
+            "choose": "Choose the way that suits you best to connect with me. I respond quickly and am always open to new opportunities and collaborations.",
+            "sendme": "Send Me a Message",
+            "complete": "Complete the form below and I'll get back to you as soon as possible. Don't hesitate to tell me all the details about your project!",
             "footer": {
-                "ready": "¿Listo para dar vida a tu proyecto?",
-                "description": "Transformemos tus ideas en experiencias digitales excepcionales. Hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos y crear algo increíble juntos.",
-                "work": "¡Trabajemos juntos!",
-                "see_linkdin": "Ver mi LinkedIn"
+                "ready": "Ready to bring your project to life?",
+                "description": "Let's transform your ideas into exceptional digital experiences. Let's talk about how I can help you achieve your goals and create something amazing together.",
+                "work": "Let's work together!",
+                "see_linkdin": "View my LinkedIn"
             }
         }
     }
