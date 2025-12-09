@@ -24,3 +24,14 @@
     border-color: #0A192F;
     cursor: pointer;
 }
+
+/* Text selection styles */
+::selection {
+    background-color: #64FFDA;
+    color: #0A192F;
+}
+
+::-moz-selection {
+    background-color: #64FFDA;
+    color: #0A192F;
+}
