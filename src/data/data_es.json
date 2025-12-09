@@ -458,7 +458,11 @@
                     "href": "#contact",
                     "variant": "outline"
                 }
-            ]
+            ],
+            "languages": {
+                "es": "Español",
+                "en": "Inglés"
+            }
         },
         "experience": {
             "title": [

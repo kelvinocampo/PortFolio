@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router';
 import { useDataJson } from '../helpers/useDataJSON';
 
 const ICONS = {
@@ -9,6 +10,8 @@ const ICONS = {
 };
 
 export const Header = () => {
+  const navigate = useNavigate();
+  const { language } = useParams();
   const data = useDataJson();
   const uiData = data.ui.header;
   const navigationItems = uiData.navigation;
@@ -37,6 +40,24 @@ export const Header = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
+  const languages = [
+    { code: 'es', name: uiData.languages.es },
+    { code: 'en', name: uiData.languages.en }
+  ];
+
+  const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
+
+  const handleLanguageChange = (langCode) => {
+    const currentHash = window.location.hash;
+    navigate(`/${langCode}${currentHash}`);
+    setIsLangMenuOpen(false);
+  };
+
+  const toggleLanguageMenu = () => {
+    setIsLangMenuOpen(!isLangMenuOpen);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +67,18 @@ export const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close language dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isLangMenuOpen && !event.target.closest('.language-selector')) {
+        setIsLangMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isLangMenuOpen]);
 
   const getButtonClasses = (variant, isMobile = false) => {
     const baseSize = isMobile ? "px-4 py-2 text-sm" : "px-4 py-2 sm:px-6 sm:py-3";
@@ -158,7 +191,7 @@ export const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex items-center space-x-6">
             {navigationItems.map((item) => (
               <a
                 key={item.href}
@@ -168,20 +201,105 @@ export const Header = () => {
                 {item.label}
               </a>
             ))}
+
+            {/* Language Selector - Desktop */}
+            <div className="relative language-selector">
+              <button
+                onClick={toggleLanguageMenu}
+                className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-[#112240] border border-[#64FFDA]/30 hover:border-[#64FFDA] transition-all duration-300 hover:bg-[#64FFDA]/10"
+                aria-label="Select language"
+              >
+                <span className="text-[#8892b0] font-medium text-sm">{currentLanguage.code.toUpperCase()}</span>
+                <svg
+                  className={`w-4 h-4 text-[#64FFDA] transition-transform ${isLangMenuOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {isLangMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-40 bg-[#112240] border border-[#64FFDA]/30 rounded-lg shadow-xl overflow-hidden z-50">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={`
+                        w-full flex items-center space-x-3 px-4 py-3 transition-colors duration-200
+                        ${language === lang.code
+                          ? 'bg-[#64FFDA]/20 text-[#64FFDA]'
+                          : 'text-[#8892b0] hover:bg-[#64FFDA]/10 hover:text-[#64FFDA]'
+                        }
+                      `}
+                    >
+                      <span className="font-medium text-sm">{lang.name}</span>
+                      {language === lang.code && (
+                        <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-[#64FFDA] p-2 rounded-lg hover:bg-[#64FFDA]/10 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <span className={`block h-0.5 w-6 bg-current transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-              <span className={`block h-0.5 w-6 bg-current transition-opacity ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`block h-0.5 w-6 bg-current transition-transform ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Language Selector - Mobile */}
+            <div className="relative language-selector">
+              <button
+                onClick={toggleLanguageMenu}
+                className="flex items-center space-x-1 px-2 py-1.5 rounded-lg bg-[#112240] border border-[#64FFDA]/30 hover:border-[#64FFDA] transition-all"
+                aria-label="Select language"
+              >
+                <span className="text-[#8892b0] font-medium text-xs">{currentLanguage.code.toUpperCase()}</span>
+              </button>
+
+              {/* Dropdown Menu Mobile */}
+              {isLangMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-36 bg-[#112240] border border-[#64FFDA]/30 rounded-lg shadow-xl overflow-hidden z-50">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={`
+                        w-full flex items-center space-x-2 px-3 py-2 transition-colors duration-200
+                        ${language === lang.code
+                          ? 'bg-[#64FFDA]/20 text-[#64FFDA]'
+                          : 'text-[#8892b0] hover:bg-[#64FFDA]/10 hover:text-[#64FFDA]'
+                        }
+                      `}
+                    >
+                      <span className="font-medium text-xs">{lang.name}</span>
+                      {language === lang.code && (
+                        <svg className="w-3 h-3 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
-          </button>
+
+            {/* Mobile menu button */}
+            <button
+              className="text-[#64FFDA] p-2 rounded-lg hover:bg-[#64FFDA]/10 transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+                <span className={`block h-0.5 w-6 bg-current transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+                <span className={`block h-0.5 w-6 bg-current transition-opacity ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`block h-0.5 w-6 bg-current transition-transform ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation Menu */}
