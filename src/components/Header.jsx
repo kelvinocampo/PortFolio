@@ -157,6 +157,19 @@ export const Header = () => {
                   {item.label}
                 </a>
               ))}
+
+              {/* Botón de descarga de CV */}
+              <a
+                href={uiData.cv_path}
+                download
+                className="flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#64FFDA]/50 w-full sm:w-auto text-center bg-transparent border-2 border-[#64FFDA] text-[#64FFDA] hover:bg-[#64FFDA] hover:text-[#0A192F] hover:shadow-lg hover:shadow-[#64FFDA]/25"
+                style={{ animationDelay: `${600 + navigationItems.length * 100}ms` }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                {uiData.download_cv}
+              </a>
             </div>
           </div>
 

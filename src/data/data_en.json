@@ -462,7 +462,9 @@
             "languages": {
                 "es": "Spanish",
                 "en": "English"
-            }
+            },
+            "download_cv": "Download CV",
+            "cv_path": "/cv/CV_es.pdf"
         },
         "experience": {
             "title": [
