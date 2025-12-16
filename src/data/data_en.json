@@ -329,7 +329,7 @@
             "category": "frontend",
             "description": "A group and private chat web application that allows instant communication and sending of text messages, images, and audio recordings.",
             "longDescription": "Complete development of a real-time chat platform that uses WebSockets (Socket.IO) to handle bidirectional communication between multiple clients. The application supports dynamic chat rooms and offers a complete multimedia experience, allowing users to send text, images (encoded in Base64), and audio recordings (using the browser's MediaRecorder API). The interface was built with Next.js and styled with Tailwind CSS to ensure a modern and efficient design.",
-            "image": "/assets/images/realtime-chat.png",
+            "image": "/assets/images/realtime-chat.webp",
             "technologies": [
                 "Next JS",
                 "TypeScript",
@@ -358,7 +358,7 @@
             "category": "fullstack",
             "description": "Flutter mobile application that centralizes the management of Gemini API keys with an integrated AI-powered chat client.",
             "longDescription": "Mobile application developed in Flutter that allows secure management of up to 10 Gemini AI API Keys, with an integrated chat system that uses the Gemini 2.5 Flash model. The application offers secure local storage through SQLite, multilingual support (Spanish/English), light and dark themes, and the ability to switch between different API keys in real time. Designed with Provider architecture for efficient state management and a smooth user experience.",
-            "image": "/assets/images/flutter-ia.png",
+            "image": "/assets/images/flutter-ia.webp",
             "technologies": [
                 "Flutter",
                 "Dart",
