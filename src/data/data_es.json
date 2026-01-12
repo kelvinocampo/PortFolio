@@ -384,6 +384,39 @@
             "year": "2025",
             "client": "Personal",
             "duration": "2 meses"
+        },
+        {
+            "id": 5,
+            "title": "Versatile & Radiant",
+            "category": "backend",
+            "description": "Sistema integral de gestión de inventarios y ventas con dashboard administrativo y pedidos automatizados vía WhatsApp.",
+            "longDescription": "Desarrollo de una solución corporativa robusta para la gestión operativa. Incluye un dashboard administrativo para el control detallado de productos, usuarios, compras e insumos. El sistema cuenta con un motor de alertas inteligentes para el inventario de suministros y una interfaz de cliente optimizada que permite realizar pedidos directos a través de la API de WhatsApp, integrando la gestión interna con el canal de ventas externo.",
+            "image": "",
+            "technologies": [
+                "React",
+                "TypeScript",
+                "Vite",
+                "Tailwind CSS",
+                "Node.js",
+                "Express",
+                "PostgreSQL",
+                "Supabase"
+            ],
+            "features": [
+                "Dashboard administrativo centralizado para gestión de stock",
+                "Sistema de alertas críticas para inventario bajo de insumos",
+                "Módulo de compras y seguimiento de proveedores",
+                "Catálogo web interactivo para clientes finales",
+                "Integración automatizada para pedidos vía WhatsApp",
+                "Autenticación y roles de usuario (Admin/Operador)",
+                "Base de datos relacional con PostgreSQL en Supabase"
+            ],
+            "githubUrl": "",
+            "liveUrl": "",
+            "status": "En Progreso",
+            "year": "2026",
+            "client": "Versatile & Radiant",
+            "duration": "En desarrollo"
         }
     ],
     "contact": [
