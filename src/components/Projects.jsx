@@ -146,6 +146,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
 const ProjectCard = ({ project, index, onClick }) => {
     const [cardRef, cardIsVisible] = useIntersectionObserver();
+    project.image ||= '/assets/images/default.png';
 
     return (
         <div
