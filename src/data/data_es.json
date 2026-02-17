@@ -412,11 +412,11 @@
                 "Base de datos relacional con PostgreSQL en Supabase"
             ],
             "githubUrl": "",
-            "liveUrl": "",
-            "status": "En Progreso",
+            "liveUrl": "https://versatile-radiant-swart.vercel.app",
+            "status": "Completado",
             "year": "2026",
             "client": "Versatile & Radiant",
-            "duration": "En desarrollo"
+            "duration": "2 meses"
         }
     ],
     "contact": [
