@@ -391,7 +391,7 @@
             "category": "backend",
             "description": "Integrated inventory and sales management system with an administrative dashboard and automated orders via WhatsApp.",
             "longDescription": "Development of a robust corporate solution for operational management. Includes an administrative dashboard for detailed control of products, users, purchases, and supplies. The system features an intelligent alert engine for inventory management and an optimized customer interface that allows direct orders through WhatsApp API, integrating internal management with external sales channels.",
-            "image": "",
+            "image": "/assets/images/versatile.webp",
             "technologies": [
                 "React",
                 "TypeScript",

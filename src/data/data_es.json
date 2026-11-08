@@ -391,7 +391,7 @@
             "category": "backend",
             "description": "Sistema integral de gestión de inventarios y ventas con dashboard administrativo y pedidos automatizados vía WhatsApp.",
             "longDescription": "Desarrollo de una solución corporativa robusta para la gestión operativa. Incluye un dashboard administrativo para el control detallado de productos, usuarios, compras e insumos. El sistema cuenta con un motor de alertas inteligentes para el inventario de suministros y una interfaz de cliente optimizada que permite realizar pedidos directos a través de la API de WhatsApp, integrando la gestión interna con el canal de ventas externo.",
-            "image": "",
+            "image": "/assets/images/versatile.webp",
             "technologies": [
                 "React",
                 "TypeScript",
